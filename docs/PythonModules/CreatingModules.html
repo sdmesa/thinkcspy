@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.5. Creating Modules &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.5" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=92D8BBF0"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.6. Glossary" href="Glossary.html" />
+    <link rel="prev" title="5.4. The random module" href="Therandommodule.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.5';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+    
+        {{ if response.serve_ad and settings.adsenseid: }}
+         <script data-ad-client="{{=settings.adsenseid}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {{ pass }}
+    
+
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=thinkcspy&page=CreatingModules'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.4. </span>The <cite>random</cite> module" data-toggle="tooltip">
+    <a href="Therandommodule.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.6. </span>Glossary' data-toggle="tooltip" >              
+    <a href="Glossary.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+    
+        {{ if settings.num_banners > 0 and settings.show_rs_banner: }}
+         <div style="width: 100%;">
+            <a href="/runestone/default/donate?banner={{=banner_num}}">
+            <img class="runestone-banner"
+                 src="/runestone/static/images/RunestoneBanner{{=banner_num}}.png"
+                 alt="Please Support Runestone"
+                 style="display: block; width: 728px; margin-left: auto; margin-right: auto; margin-top: 10px;">
+            </a>
+         </div>
+        {{ pass }}
+    
+
+
+  
+  <div class="section" id="creating-modules">
+<h1><span class="section-number">5.5. </span>Creating Modules<a class="headerlink" href="#creating-modules" title="Permalink to this headline">¶</a></h1>
+<p>You’ve seen how to <em>use</em> modules like <code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">math</span></code>, and <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, but how would you <em>create</em> a module?</p>
+<p>Every time you’ve written a Python script you’ve created a module!</p>
+<p>A Python module is just a Python source code file.  Let’s consider the Python file shown below.</p>
+<p><em>coffee_shop.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The coffee shop module contains functions and contains variables</span>
+<span class="sd">important to implementing a coffee shop.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Set some variables</span>
+<span class="n">shop_name</span> <span class="o">=</span> <span class="s2">&quot;Runestone Brew House&quot;</span>
+<span class="n">coffee_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>
+<span class="n">coffee_roasts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hot chocolate&quot;</span><span class="p">,</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;espresso&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This is a Python script named <code class="docutils literal notranslate"><span class="pre">coffee_shop.py</span></code> that contains three variables: <code class="docutils literal notranslate"><span class="pre">shop_name</span></code>, <code class="docutils literal notranslate"><span class="pre">coffee_sizes</span></code>, and <code class="docutils literal notranslate"><span class="pre">coffee_roasts</span></code>.  The <code class="docutils literal notranslate"><span class="pre">shop_name</span></code> is a string, <code class="docutils literal notranslate"><span class="pre">coffee_sizes</span></code> is a list containing strings, and <code class="docutils literal notranslate"><span class="pre">coffee_roasts</span></code> is also a list containing strings.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="5.5.1" data-multipleanswers="false"  id="question4_5_1"  style="visibility: hidden;">
+            <p>modules-5-1: A module is another name for:</p>
+
+            <li data-component="answer"  id="question4_5_1_opt_a">the code inside a function</li><li data-component="feedback">The code inside a function is called a function body.</li>
+            
+            <li data-component="answer" data-correct id="question4_5_1_opt_b">a file containing Python code</li><li data-component="feedback">Python modules are just Python source code files.</li>
+            
+            <li data-component="answer"  id="question4_5_1_opt_c">the comments before a function</li><li data-component="feedback">The comments just before a function are the function documentation.</li>
+            
+            <li data-component="answer"  id="question4_5_1_opt_d">a small block of Python code</li><li data-component="feedback">Modules may be small, but there is a more accurate answer.</li>
+            
+
+            </ul>
+            </div>
+            <p>That’s so great!  We’ve got the basics of a coffee shop.  All you need is some roasted coffee and cups.  You’re good to go.</p>
+<p>If you try to run that code though, it doesn’t do much that’s visible to a user…</p>
+<p>How can we use the <code class="docutils literal notranslate"><span class="pre">coffee_shop</span></code> module?  We can import it and use it in other Python source code files.  Let’s consider the Python file shown below.</p>
+<p><em>coffee_customer.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">coffee_shop</span>
+
+<span class="c1"># Output the information we know from the module</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">shop_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available sizes:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_sizes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available roasts:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_roasts</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is a Python script named <code class="docutils literal notranslate"><span class="pre">coffee_customer.py</span></code> that imports our <code class="docutils literal notranslate"><span class="pre">coffee_shop</span></code> module, then prints out the information from that module.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>The module files must be in the same directory on your computer for Python to know how to import them automatically</p>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="5.5.2" data-multipleanswers="false"  id="question4_5_2"  style="visibility: hidden;">
+            <p>modules-5-2: Create a module by:</p>
+
+            <li data-component="answer"  id="question4_5_2_opt_a">writing a new function or class</li><li data-component="feedback">You may write a function or class inside a module, but this alone does not create one.</li>
+            
+            <li data-component="answer"  id="question4_5_2_opt_b">placing an import statement at the top of a file</li><li data-component="feedback">Import statements permit you to use other modules, but they do not create one.</li>
+            
+            <li data-component="answer" data-correct id="question4_5_2_opt_c">placing code in a Python file in the same directory as your other source code</li><li data-component="feedback">Modules are Python source code files.</li>
+            
+            <li data-component="answer"  id="question4_5_2_opt_d">creating a comment block at the beginning of a file</li><li data-component="feedback">Modules should include comment blocks at the top, but writing a comment block at the top of a file does not create a new module.</li>
+            
+
+            </ul>
+            </div>
+            <p>We use <strong>dot notation</strong> to grab the <code class="docutils literal notranslate"><span class="pre">shop_name</span></code>, <code class="docutils literal notranslate"><span class="pre">coffee_sizes</span></code>, and <code class="docutils literal notranslate"><span class="pre">coffee_roasts</span></code> variables from the <code class="docutils literal notranslate"><span class="pre">coffee_shop</span></code> module.  Then we print them out as parts of nice messages.</p>
+<p>Variables aren’t the only thing we can place in modules though…  We can put any valid Python code in them.</p>
+<p>Let’s improve our coffee shop!</p>
+<p><em>coffee_shop.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The coffee shop module contains functions and contains variables</span>
+<span class="sd">important to implementing a coffee shop.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Set some variables</span>
+<span class="n">shop_name</span> <span class="o">=</span> <span class="s2">&quot;Runestone Brew House&quot;</span>
+<span class="n">coffee_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>
+<span class="n">coffee_roasts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hot chocolate&quot;</span><span class="p">,</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;espresso&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">order_coffee</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">roast</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Take an order from a user</span>
+<span class="sd">    :param size: a string containing one of the coffee_sizes</span>
+<span class="sd">    :param roast: a string containing one of the coffee_roasts</span>
+<span class="sd">    :return: a message about the coffee order</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;Here&#39;s your </span><span class="si">{}</span><span class="s2"> coffee roasted </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">roast</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The old file contents are present, but now there’s also an <code class="docutils literal notranslate"><span class="pre">order_coffee</span></code> function that takes two arguments, <code class="docutils literal notranslate"><span class="pre">size</span></code> and <code class="docutils literal notranslate"><span class="pre">roast</span></code>.</p>
+<p>Also - look at all the awesome comments in there!</p>
+<div class="admonition-module-comments admonition">
+<p class="admonition-title">Module Comments</p>
+<p>It is important to include header comments in your module that explain what the module does.</p>
+</div>
+<div class="admonition-function-comments admonition">
+<p class="admonition-title">Function Comments</p>
+<p>Functions are the next chapter, but the comments used here demonstrate a common Python documentation style.</p>
+</div>
+<p>Ok - so we’ve got a function in our module now, let’s use it.</p>
+<p><em>coffee_customer.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module with coffee_shop functionality</span>
+<span class="kn">import</span> <span class="nn">coffee_shop</span>
+
+<span class="c1"># Output the information we know from the module</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">shop_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available sizes:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_sizes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available roasts:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_roasts</span><span class="p">)</span>
+
+<span class="c1"># Get some inputs from the user</span>
+<span class="n">order_size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What size coffee do you want? &quot;</span><span class="p">)</span>
+<span class="n">order_roast</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What roast do you want? &quot;</span><span class="p">)</span>
+
+<span class="c1"># Send the order to the coffee shop module</span>
+<span class="n">shop_says</span> <span class="o">=</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">order_coffee</span><span class="p">(</span><span class="n">order_size</span><span class="p">,</span> <span class="n">order_roast</span><span class="p">)</span>
+<span class="c1"># Print out whatever it gave back to us</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shop_says</span><span class="p">)</span>
+</pre></div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="5.5.3" data-multipleanswers="false"  id="question4_5_3"  style="visibility: hidden;">
+            <p>modules-5-3: What determines the name of our import?</p>
+
+            <li data-component="answer"  id="question4_5_3_opt_a">the first variable name in the module</li><li data-component="feedback">This does not determine module name, and not all modules export variables.</li>
+            
+            <li data-component="answer"  id="question4_5_3_opt_b">a comment early in the module</li><li data-component="feedback">This does not determine module name, and comments are not mandatory components of modules.</li>
+            
+            <li data-component="answer"  id="question4_5_3_opt_c">it's called whatever we name it in the "import" statement</li><li data-component="feedback">The import statement uses the module name to lookup the correct module, and an import statement is not used to create the module.</li>
+            
+            <li data-component="answer" data-correct id="question4_5_3_opt_d">the filename of the module</li><li data-component="feedback">The filename of the module determines the name of the import.</li>
+            
+
+            </ul>
+            </div>
+            <p>We added some lines to our <code class="docutils literal notranslate"><span class="pre">coffee_customer</span></code> script…  Now after printing data nicely, <code class="docutils literal notranslate"><span class="pre">coffee_customer</span></code> asks the user for a size and a roast.  These are the parameters required by our <code class="docutils literal notranslate"><span class="pre">order_coffee</span></code> function over in the <code class="docutils literal notranslate"><span class="pre">coffee_shop</span></code> module!</p>
+<p>Call the <code class="docutils literal notranslate"><span class="pre">order_coffee</span></code> function with <strong>dot notation</strong>, just like retrieving variable values.  The function call is the line that says <code class="docutils literal notranslate"><span class="pre">shop_says</span> <span class="pre">=</span> <span class="pre">coffee_shop.order_coffee(order_size,</span> <span class="pre">order_roast)</span></code>.  The function returns something, so we save that off in <code class="docutils literal notranslate"><span class="pre">shop_says</span></code>.  The next line prints out whatever the shop said.</p>
+<p>Coffee shops do more than just coffee!  Maybe you want some milk.  We need to add some functionality to our coffee shop.  Check it out below.</p>
+<p><em>coffee_shop.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The coffee shop module contains functions and contains variables</span>
+<span class="sd">important to implementing a coffee shop.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Set some variables</span>
+<span class="n">shop_name</span> <span class="o">=</span> <span class="s2">&quot;Runestone Brew House&quot;</span>
+<span class="n">coffee_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>
+<span class="n">coffee_roasts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hot chocolate&quot;</span><span class="p">,</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;espresso&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">order_coffee</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">roast</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Take an order from a user</span>
+<span class="sd">    :param size: a string containing one of the coffee_sizes</span>
+<span class="sd">    :param roast: a string containing one of the coffee_roasts</span>
+<span class="sd">    :return: a message about the coffee order</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;Here&#39;s your </span><span class="si">{}</span><span class="s2"> coffee roasted </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">roast</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_milk_please</span><span class="p">(</span><span class="n">fat_content</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pretend like we&#39;re adding some milk to a coffee</span>
+<span class="sd">    :param fat_content: a string or integer containing the milkfat content</span>
+<span class="sd">    :return: a message about having added the milk</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;I&#39;ve added the </span><span class="si">{}</span><span class="s2">% milk&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fat_content</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The new function is called <code class="docutils literal notranslate"><span class="pre">add_milk_please</span></code> and it takes one parameter - the <code class="docutils literal notranslate"><span class="pre">fat_content</span></code>.  It returns a string explaining what happened.</p>
+<p>This is great.  But the function isn’t going to do anything by itself.  We have to call it.  Check out the update to our <code class="docutils literal notranslate"><span class="pre">coffee_customer</span></code> script below.</p>
+<p><em>coffee_customer.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module with coffee_shop functionality</span>
+<span class="kn">import</span> <span class="nn">coffee_shop</span>
+
+<span class="c1"># Output the information we know from the module</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">shop_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available sizes:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_sizes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available roasts:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_roasts</span><span class="p">)</span>
+
+<span class="c1"># Get some inputs from the user</span>
+<span class="n">order_size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What size coffee do you want? &quot;</span><span class="p">)</span>
+<span class="n">order_roast</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What roast do you want? &quot;</span><span class="p">)</span>
+
+<span class="c1"># Send the order to the coffee shop module</span>
+<span class="n">shop_says</span> <span class="o">=</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">order_coffee</span><span class="p">(</span><span class="n">order_size</span><span class="p">,</span> <span class="n">order_roast</span><span class="p">)</span>
+<span class="c1"># Print out whatever it gave back to us</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shop_says</span><span class="p">)</span>
+
+<span class="c1"># See if the user wants to add milk</span>
+<span class="n">add_milk_response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Do you want to add milk (y/n)? &quot;</span><span class="p">)</span>
+<span class="c1"># Convert the response to lowercase, then check for a &quot;yes&quot; answer</span>
+<span class="k">if</span> <span class="s2">&quot;y&quot;</span> <span class="ow">in</span> <span class="n">add_milk_response</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+    <span class="n">milk_fat</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What percent milk do you want added? &quot;</span><span class="p">)</span>
+    <span class="n">shop_says</span> <span class="o">=</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">add_milk_please</span><span class="p">(</span><span class="n">milk_fat</span><span class="p">)</span>
+    <span class="c1"># Print out whatever it gave back to us</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">shop_says</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That got fancy!  We were just ordering coffee but now the user can choose to add milk!  Selection is in a couple chapters, but if you read that code like english you’ll see what’s going on.</p>
+<p>The call to <code class="docutils literal notranslate"><span class="pre">add_milk_please</span></code> happens right in there - it looks just like the other one: <code class="docutils literal notranslate"><span class="pre">shop_says</span> <span class="pre">=</span> <span class="pre">coffee_shop.add_milk_please(milk_fat)</span></code>.</p>
+<p>Let’s wrap this coffee shop visit up.  But - you better leave a tip.  We’ll add another function to our coffee shop to enable that.</p>
+<p><em>coffee_shop.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The coffee shop module contains functions and contains variables</span>
+<span class="sd">important to implementing a coffee shop.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Set some variables</span>
+<span class="n">shop_name</span> <span class="o">=</span> <span class="s2">&quot;Runestone Brew House&quot;</span>
+<span class="n">coffee_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>
+<span class="n">coffee_roasts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hot chocolate&quot;</span><span class="p">,</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="s2">&quot;espresso&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">order_coffee</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">roast</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Take an order from a user</span>
+<span class="sd">    :param size: a string containing one of the coffee_sizes</span>
+<span class="sd">    :param roast: a string containing one of the coffee_roasts</span>
+<span class="sd">    :return: a message about the coffee order</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;Here&#39;s your </span><span class="si">{}</span><span class="s2"> coffee roasted </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">roast</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_milk_please</span><span class="p">(</span><span class="n">fat_content</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pretend like we&#39;re adding some milk to a coffee</span>
+<span class="sd">    :param fat_content: a string or integer containing the milkfat content</span>
+<span class="sd">    :return: a message about having added the milk</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;I&#39;ve added the </span><span class="si">{}</span><span class="s2">% milk&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fat_content</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">give_tip</span><span class="p">(</span><span class="n">tip_amount</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Take a tip from the user, then be happy about it</span>
+<span class="sd">    :param tip_amount: the tip amount</span>
+<span class="sd">    :return: nothing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thank you so much!  We don&#39;t make a ton of money.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Not having a &quot;return&quot; statement causes our function to return None</span>
+</pre></div>
+</div>
+<p>We added the <code class="docutils literal notranslate"><span class="pre">give_tip</span></code> function which takes one parameter, the <code class="docutils literal notranslate"><span class="pre">tip_amount</span></code>.  We don’t actually do anything with that parameter…  But if we were getting fancier with the coffee shop we might add it to the customer’s bill, we might print it out, or we might berate the customer for being too cheap…  Here we just go ahead and blurt out a thanks to the user!  Bein’ friendly is important.</p>
+<p>How do we call this from our <code class="docutils literal notranslate"><span class="pre">coffee_customer</span></code> script?</p>
+<p><em>coffee_customer.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module with coffee_shop functionality</span>
+<span class="kn">import</span> <span class="nn">coffee_shop</span>
+
+<span class="c1"># Output the information we know from the module</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">shop_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available sizes:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_sizes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available roasts:&quot;</span><span class="p">,</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">coffee_roasts</span><span class="p">)</span>
+
+<span class="c1"># Get some inputs from the user</span>
+<span class="n">order_size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What size coffee do you want? &quot;</span><span class="p">)</span>
+<span class="n">order_roast</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What roast do you want? &quot;</span><span class="p">)</span>
+
+<span class="c1"># Send the order to the coffee shop module</span>
+<span class="n">shop_says</span> <span class="o">=</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">order_coffee</span><span class="p">(</span><span class="n">order_size</span><span class="p">,</span> <span class="n">order_roast</span><span class="p">)</span>
+<span class="c1"># Print out whatever it gave back to us</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shop_says</span><span class="p">)</span>
+
+<span class="c1"># See if the user wants to add milk</span>
+<span class="n">add_milk_response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Do you want to add milk (y/n)? &quot;</span><span class="p">)</span>
+<span class="c1"># Convert the response to lowercase, then check for a &quot;yes&quot; answer</span>
+<span class="k">if</span> <span class="s2">&quot;y&quot;</span> <span class="ow">in</span> <span class="n">add_milk_response</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+    <span class="n">milk_fat</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What percent milk do you want added? &quot;</span><span class="p">)</span>
+    <span class="n">shop_says</span> <span class="o">=</span> <span class="n">coffee_shop</span><span class="o">.</span><span class="n">add_milk_please</span><span class="p">(</span><span class="n">milk_fat</span><span class="p">)</span>
+    <span class="c1"># Print out whatever it gave back to us</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">shop_says</span><span class="p">)</span>
+
+<span class="c1"># They better give a tip...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;THAT&#39;S GOOD COFFEE!  Very good.  Your brain is working again.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You better give a tip.&quot;</span><span class="p">)</span>
+<span class="n">tip_amount</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Tip amount? &quot;</span><span class="p">)</span>
+<span class="n">coffee_shop</span><span class="o">.</span><span class="n">give_tip</span><span class="p">(</span><span class="n">tip_amount</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Our function call is there on the last line.</p>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.4. The <cite>random</cite> module' data-toggle="tooltip">
+    <a href="Therandommodule.html" aria-label="5.4. The <cite>random</cite> module">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.6. Glossary' data-toggle="tooltip" >
+    <a href="Glossary.html" aria-label="5.6. Glossary">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum, Created using Runestone Interactive.
+      Last updated on Nov 13, 2021.<br/>
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.5.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

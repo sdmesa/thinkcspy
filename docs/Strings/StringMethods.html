@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.5. String Methods &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.5" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=92D8BBF0"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9.6. Length" href="Length.html" />
+    <link rel="prev" title="9.4. Index Operator: Working with the Characters of a String" href="IndexOperatorWorkingwiththeCharactersofaString.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.5';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+    
+        {{ if response.serve_ad and settings.adsenseid: }}
+         <script data-ad-client="{{=settings.adsenseid}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {{ pass }}
+    
+
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=thinkcspy&page=StringMethods'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">9.4. </span>Index Operator: Working with the Characters of a String" data-toggle="tooltip">
+    <a href="IndexOperatorWorkingwiththeCharactersofaString.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">9.6. </span>Length' data-toggle="tooltip" >              
+    <a href="Length.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+    
+        {{ if settings.num_banners > 0 and settings.show_rs_banner: }}
+         <div style="width: 100%;">
+            <a href="/runestone/default/donate?banner={{=banner_num}}">
+            <img class="runestone-banner"
+                 src="/runestone/static/images/RunestoneBanner{{=banner_num}}.png"
+                 alt="Please Support Runestone"
+                 style="display: block; width: 728px; margin-left: auto; margin-right: auto; margin-top: 10px;">
+            </a>
+         </div>
+        {{ pass }}
+    
+
+
+  
+  <div class="section" id="string-methods">
+<span id="stringmethods"></span><h1><span class="section-number">9.5. </span>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h1>
+<p>We previously saw that each turtle instance has its own attributes and
+a number of methods that can be applied to the instance.  For example,
+we wrote <code class="docutils literal notranslate"><span class="pre">tess.right(90)</span></code> when we wanted the turtle object <code class="docutils literal notranslate"><span class="pre">tess</span></code> to perform the <code class="docutils literal notranslate"><span class="pre">right</span></code> method to turn
+to the right 90 degrees.  The “dot notation” is the way we connect the name of an object to the name of a method
+it can perform.</p>
+<p>Strings are also objects.  Each string instance has its own attributes and methods.  The most important attribute of the string is the collection of characters.  There are a wide variety of methods.  Try the following program.</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=chp08_upper >
+<div id=chp08_upper_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="chp08_upper_editor" data-question_label="9.5.1" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+ss = "Hello, World"
+print(ss.upper())
+
+tt = ss.lower()
+print(tt)
+</textarea>
+</div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">upper</span></code> is a method that can be invoked on any string object
+to create a new string in which all the
+characters are in uppercase.  <code class="docutils literal notranslate"><span class="pre">lower</span></code> works in a similar fashion changing all characters in the string
+to lowercase.  (The original string <code class="docutils literal notranslate"><span class="pre">ss</span></code> remains unchanged.  A new string <code class="docutils literal notranslate"><span class="pre">tt</span></code> is created.)</p>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">upper</span></code> and <code class="docutils literal notranslate"><span class="pre">lower</span></code>, the following table provides a summary of some other useful string methods.  There are a few activecode examples that follow so that you can try them out.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>upper</p></td>
+<td><p>none</p></td>
+<td><p>Returns a string in all uppercase</p></td>
+</tr>
+<tr class="row-odd"><td><p>lower</p></td>
+<td><p>none</p></td>
+<td><p>Returns a string in all lowercase</p></td>
+</tr>
+<tr class="row-even"><td><p>capitalize</p></td>
+<td><p>none</p></td>
+<td><p>Returns a string with first character capitalized, the rest lower</p></td>
+</tr>
+<tr class="row-odd"><td><p>strip</p></td>
+<td><p>none</p></td>
+<td><p>Returns a string with the leading and trailing whitespace removed</p></td>
+</tr>
+<tr class="row-even"><td><p>lstrip</p></td>
+<td><p>none</p></td>
+<td><p>Returns a string with the leading whitespace removed</p></td>
+</tr>
+<tr class="row-odd"><td><p>rstrip</p></td>
+<td><p>none</p></td>
+<td><p>Returns a string with the trailing whitespace removed</p></td>
+</tr>
+<tr class="row-even"><td><p>count</p></td>
+<td><p>item</p></td>
+<td><p>Returns the number of occurrences of item</p></td>
+</tr>
+<tr class="row-odd"><td><p>replace</p></td>
+<td><p>old, new</p></td>
+<td><p>Replaces all occurrences of old substring with new</p></td>
+</tr>
+<tr class="row-even"><td><p>center</p></td>
+<td><p>width</p></td>
+<td><p>Returns a string centered in a field of width spaces</p></td>
+</tr>
+<tr class="row-odd"><td><p>ljust</p></td>
+<td><p>width</p></td>
+<td><p>Returns a string left justified in a field of width spaces</p></td>
+</tr>
+<tr class="row-even"><td><p>rjust</p></td>
+<td><p>width</p></td>
+<td><p>Returns a string right justified in a field of width spaces</p></td>
+</tr>
+<tr class="row-odd"><td><p>find</p></td>
+<td><p>item</p></td>
+<td><p>Returns the leftmost index where the substring item is found, or -1 if not found</p></td>
+</tr>
+<tr class="row-even"><td><p>rfind</p></td>
+<td><p>item</p></td>
+<td><p>Returns the rightmost index where the substring item is found, or -1 if not found</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>item</p></td>
+<td><p>Like find except causes a runtime error if item is not found</p></td>
+</tr>
+<tr class="row-even"><td><p>rindex</p></td>
+<td><p>item</p></td>
+<td><p>Like rfind except causes a runtime error if item is not found</p></td>
+</tr>
+<tr class="row-odd"><td><p>format</p></td>
+<td><p>substitutions</p></td>
+<td><p>Involved! See <a class="reference internal" href="#format-strings"><span class="std std-ref">String Format Method</span></a>, below</p></td>
+</tr>
+</tbody>
+</table>
+<p>You should experiment with these
+methods so that you understand what they do.  Note once again that the methods that return strings do not
+change the original.  You can also consult the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python documentation for strings</a>.</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_methods1 >
+<div id=ch08_methods1_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_methods1_editor" data-question_label="9.5.2" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+ss = "    Hello, World    "
+
+els = ss.count("l")
+print(els)
+
+print("***" + ss.strip() + "***")
+print("***" + ss.lstrip() + "***")
+print("***" + ss.rstrip() + "***")
+
+news = ss.replace("o", "***")
+print(news)
+</textarea>
+</div>
+</div>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_methods2 >
+<div id=ch08_methods2_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_methods2_editor" data-question_label="9.5.3" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+food = "banana bread"
+print(food.capitalize())
+
+print("*" + food.center(25) + "*")
+print("*" + food.ljust(25) + "*")     # stars added to show bounds
+print("*" + food.rjust(25) + "*")
+
+print(food.find("e"))
+print(food.find("na"))
+print(food.find("b"))
+
+print(food.rfind("e"))
+print(food.rfind("na"))
+print(food.rfind("b"))
+
+print(food.index("e"))
+</textarea>
+</div>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="9.5.4" data-multipleanswers="false"  id="test_question8_3_1"  style="visibility: hidden;">
+            <p>strings-5-4: What is printed by the following statements?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;python rocks&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="test_question8_3_1_opt_a">0</li><li data-component="feedback">There are definitely o and p characters.</li>
+            
+            <li data-component="answer"  id="test_question8_3_1_opt_b">2</li><li data-component="feedback">There are 2 o characters but what about p?</li>
+            
+            <li data-component="answer" data-correct id="test_question8_3_1_opt_c">3</li><li data-component="feedback">Yes, add the number of o characters and the number of p characters.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="9.5.5" data-multipleanswers="false"  id="test_question8_3_2"  style="visibility: hidden;">
+            <p>strings-5-5: What is printed by the following statements?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;python rocks&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="test_question8_3_2_opt_a">yyyyy</li><li data-component="feedback">Yes, s[1] is y and the index of n is 5, so 5 y characters.  It is important to realize that the index method has precedence over the repetition operator.  Repetition is done last.</li>
+            
+            <li data-component="answer"  id="test_question8_3_2_opt_b">55555</li><li data-component="feedback">Close.  5 is not repeated, it is the number of times to repeat.</li>
+            
+            <li data-component="answer"  id="test_question8_3_2_opt_c">n</li><li data-component="feedback">This expression uses the index of n</li>
+            
+            <li data-component="answer"  id="test_question8_3_2_opt_d">Error, you cannot combine all those things together.</li><li data-component="feedback">This is fine, the repetition operator used the result of indexing and the index method.</li>
+            
+
+            </ul>
+            </div>
+            <div class="section" id="string-format-method">
+<span id="format-strings"></span><span id="index-0"></span><h2><span class="section-number">9.5.1. </span>String Format Method<a class="headerlink" href="#string-format-method" title="Permalink to this headline">¶</a></h2>
+<p>In grade school quizzes a common convention is to use fill-in-the blanks. For instance,</p>
+<blockquote>
+<div><p>Hello _____!</p>
+</div></blockquote>
+<p>and you can fill in the name of the person greeted, and combine
+given text with a chosen insertion. <em>We use this as an analogy:</em>
+Python has a similar
+construction, better called fill-in-the-braces. The string method <code class="docutils literal notranslate"><span class="pre">format</span></code>,  makes
+substitutions into places in a string
+enclosed in braces. Run this code:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_methods3 >
+<div id=ch08_methods3_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_methods3_editor" data-question_label="9.5.1.1" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+person = input('Your name: ')
+greeting = 'Hello {}!'.format(person)
+print(greeting)
+</textarea>
+</div>
+</div>
+<p>There are several new ideas here!</p>
+<p>The string for the <code class="docutils literal notranslate"><span class="pre">format</span></code> method has a special form, with braces embedded.
+Such a string is called a <em>format string</em>.  Places where
+braces are embedded are replaced by the value of an expression
+taken from the parameter list for the <code class="docutils literal notranslate"><span class="pre">format</span></code> method. There are many
+variations on the syntax between the braces. In this case we use
+the syntax where the first (and only) location in the string with
+braces has a substitution made from the first (and only) parameter.</p>
+<p>In the code above, this new string is assigned to the identifier
+<code class="docutils literal notranslate"><span class="pre">greeting</span></code>, and then the string is printed.</p>
+<p>The identifier
+<code class="docutils literal notranslate"><span class="pre">greeting</span></code> was introduced to break the operations into a clearer
+sequence of steps. However, since the value of <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is only
+referenced once, it can be eliminated with the more concise
+version:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_methods4 >
+<div id=ch08_methods4_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_methods4_editor" data-question_label="9.5.1.2" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+person = input('Enter your name: ')
+print('Hello {}!'.format(person))
+</textarea>
+</div>
+</div>
+<p>There can be multiple substitutions, with data of any type.
+Next we use floats.  Try original price $2.50  with a 7% discount:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_methods5 >
+<div id=ch08_methods5_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_methods5_editor" data-question_label="9.5.1.3" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+origPrice = float(input('Enter the original price: $'))
+discount = float(input('Enter discount percentage: '))
+newPrice = (1 - discount/100)*origPrice
+calculation = '${} discounted by {}% is ${}.'.format(origPrice, discount, newPrice)
+print(calculation)
+</textarea>
+</div>
+</div>
+<p>The parameters are inserted into the braces in order.</p>
+<p>If you used the data suggested, this result is not satisfying.
+Prices should appear with exactly two places beyond the decimal point,
+but that is not the default way to display floats.</p>
+<p>Format strings can give further information inside the braces
+showing how to specially format data.
+In particular floats can be shown with a specific number of decimal places.
+For two decimal places, put <code class="docutils literal notranslate"><span class="pre">:.2f</span></code> inside the braces for the monetary values:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_methods6 >
+<div id=ch08_methods6_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_methods6_editor" data-question_label="9.5.1.4" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+origPrice = float(input('Enter the original price: $'))
+discount = float(input('Enter discount percentage: '))
+newPrice = (1 - discount/100)*origPrice
+calculation = '${:.2f} discounted by {}% is ${:.2f}.'.format(origPrice, discount, newPrice)
+print(calculation)
+</textarea>
+</div>
+</div>
+<p>The 2 in the format modifier can be replaced by another integer to round to that
+specified number of digits.</p>
+<p>This kind of format string depends directly on the order of the
+parameters to the format method. There are other approaches that we will
+skip here, explicitly numbering substitutions and taking substitutions from a dictionary.</p>
+<p>A technical point: Since braces have special meaning in a format
+string, there must be a special rule if you want braces to actually
+be included in the final <em>formatted</em> string. The rule is to double
+the braces: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}}</span></code>. For example mathematical set
+notation uses braces. The initial and final doubled
+braces in the format string below generate literal braces in the
+formatted string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">setStr</span> <span class="o">=</span>  <span class="s1">&#39;The set is {​{ </span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1"> }​}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">setStr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Unfortunately, at the time of this writing, the ActiveCode format implementation has a bug,
+printing doubled braces, but standard Python prints <code class="docutils literal notranslate"><span class="pre">{5,</span> <span class="pre">9}</span></code>.</p>
+<p>You can have multiple placeholders indexing the same argument, or perhaps even have extra
+arguments that are not referenced at all:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ch08_formatspecification >
+<div id=ch08_formatspecification_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ch08_formatspecification_editor" data-question_label="9.5.1.5" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+letter = """
+Dear {0} {2}.
+ {0}, I have an interesting money-making proposition for you!
+ If you deposit $10 million into my bank account, I can
+ double your money ...
+"""
+
+print(letter.format("Paris", "Whitney", "Hilton"))
+print(letter.format("Bill", "Henry", "Gates"))
+</textarea>
+</div>
+</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="9.5.1.6" data-multipleanswers="false"  id="test_question8_3_3"  style="visibility: hidden;">
+            <p>strings-5-11: What is printed by the following statements?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sum of </span><span class="si">{}</span><span class="s1"> and </span><span class="si">{}</span><span class="s1"> is </span><span class="si">{}</span><span class="s1">; product: </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="test_question8_3_3_opt_a">Nothing - it causes an error</li><li data-component="feedback">It is legal format syntax:  put the data in place of the braces.</li>
+            
+            <li data-component="answer"  id="test_question8_3_3_opt_b">sum of {} and {} is {}; product: {}. 2 6 8 12</li><li data-component="feedback">Put the data into the format string; not after it.</li>
+            
+            <li data-component="answer" data-correct id="test_question8_3_3_opt_c">sum of 2 and 6 is 8; product: 12.</li><li data-component="feedback">Yes, correct substitutions!</li>
+            
+            <li data-component="answer"  id="test_question8_3_3_opt_d">sum of {2} and {6} is {8}; product: {12}.</li><li data-component="feedback">Close:  REPLACE the braces.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="9.5.1.7" data-multipleanswers="false"  id="test_question8_3_4"  style="visibility: hidden;">
+            <p>strings-5-12: What is printed by the following statements?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="mf">2.34567</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.1f}</span><span class="s1"> </span><span class="si">{:.2f}</span><span class="s1"> </span><span class="si">{:.7f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="test_question8_3_4_opt_a">2.34567 2.34567 2.34567</li><li data-component="feedback">The numbers before the f in the braces give the number of digits to display after the decimal point.</li>
+            
+            <li data-component="answer"  id="test_question8_3_4_opt_b">2.3 2.34 2.34567</li><li data-component="feedback">Close, but round to the number of digits and display the full number of digits specified.</li>
+            
+            <li data-component="answer" data-correct id="test_question8_3_4_opt_c">2.3 2.35 2.3456700</li><li data-component="feedback">Yes, correct number of digits with rounding!</li>
+            
+
+            </ul>
+            </div>
+            </div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 9.4. Index Operator: Working with the Characters of a String' data-toggle="tooltip">
+    <a href="IndexOperatorWorkingwiththeCharactersofaString.html" aria-label="9.4. Index Operator: Working with the Characters of a String">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 9.6. Length' data-toggle="tooltip" >
+    <a href="Length.html" aria-label="9.6. Length">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum, Created using Runestone Interactive.
+      Last updated on Nov 13, 2021.<br/>
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.5.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

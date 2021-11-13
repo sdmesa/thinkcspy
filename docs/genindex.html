@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="_static/runestone-custom-sphinx-bootstrap.css?v=5.5.5" />
+    <link rel="stylesheet" type="text/css" href="_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="_static/animationbase.js?v=A043C3A7"></script>
+    <script src="_static/html4css1.css?v=4533ACD3"></script>
+    <script src="_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="_static/webglinteractive.js?v=2B768384"></script>
+    <script src="_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="_static/runestone.js?v=92D8BBF0"></script>
+    <script src="_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="_static/jquery-fix.js?v=1226591B"></script>
+    <script src="_static/bootstrap-sphinx.js"></script>
+    <script src="_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.5';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+    
+        {{ if response.serve_ad and settings.adsenseid: }}
+         <script data-ad-client="{{=settings.adsenseid}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {{ pass }}
+    
+
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='#'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=thinkcspy&page=genindex'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+
+   
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+-->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+    
+        {{ if settings.num_banners > 0 and settings.show_rs_banner: }}
+         <div style="width: 100%;">
+            <a href="/runestone/default/donate?banner={{=banner_num}}">
+            <img class="runestone-banner"
+                 src="/runestone/static/images/RunestoneBanner{{=banner_num}}.png"
+                 alt="Please Support Runestone"
+                 style="display: block; width: 728px; margin-left: auto; margin-right: auto; margin-top: 10px;">
+            </a>
+         </div>
+        {{ pass }}
+    
+
+
+  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="Symbols">Symbols</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    !=
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-2">%</a>
+</li>
+      <li>
+    ( )
+
+      <ul>
+        <li><a href="Functions/functions.html#index-1">function call</a>
+</li>
+        <li><a href="Functions/functions.html#index-0">function definition</a>
+</li>
+        <li><a href="SimplePythonData/OperatorsandOperands.html#index-1">grouping</a>
+</li>
+      </ul></li>
+      <li>
+    *
+
+      <ul>
+        <li><a href="Lists/ConcatenationandRepetition.html#index-0">list repetition</a>
+</li>
+        <li><a href="SimplePythonData/OperatorsandOperands.html#index-0">multiplication of numbers</a>
+</li>
+        <li><a href="Strings/OperationsonStrings.html#index-0">string repetition</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-0">**</a>
+</li>
+      <li>
+    +
+
+      <ul>
+        <li><a href="SimplePythonData/OperatorsandOperands.html#index-0">addition</a>
+</li>
+        <li><a href="Lists/ConcatenationandRepetition.html#index-0">list concatenation</a>
+</li>
+        <li><a href="Strings/OperationsonStrings.html#index-0">string concatenation</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-0">-</a>
+</li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-1">/</a>
+</li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-1">//</a>
+</li>
+      <li><a href="MoreAboutIteration/RandomlyWalkingTurtles.html#index-0">3n + 1 sequence</a>
+</li>
+      <li>
+    &lt;
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    &lt;=
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+      <li>
+    ==
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+      <li>
+    &gt;
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+      <li>
+    &gt;=
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+      <li>
+    [ : ]
+
+      <ul>
+        <li><a href="Lists/ListSlices.html#index-0">list slice</a>
+</li>
+        <li><a href="Strings/TheSliceOperator.html#index-0">string slice</a>
+</li>
+      </ul></li>
+      <li>
+    [ ]
+
+      <ul>
+        <li><a href="Dictionaries/intro-Dictionaries.html#index-0">dictionary access</a>
+</li>
+        <li><a href="Lists/AccessingElements.html#index-0">list indexing</a>
+</li>
+        <li><a href="Lists/ListValues.html#index-0">list literal</a>
+</li>
+        <li><a href="Strings/IndexOperatorWorkingwiththeCharactersofaString.html#index-0">string indexing</a>
+</li>
+      </ul></li>
+      <li>
+    {}
+
+      <ul>
+        <li><a href="Strings/StringMethods.html#index-0">format string</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Files/Glossary.html#term-absolute-file-path"><strong>absolute file path</strong></a>, <a href="Files/FindingaFileonyourDisk.html#index-0">[1]</a>
+</li>
+      <li><a href="Functions/Functionscancallotherfunctions.html#index-0">abstraction</a>
+</li>
+      <li><a href="Functions/TheAccumulatorPattern.html#index-0">accumulator pattern</a>, <a href="MoreAboutIteration/accumulatorRevisited.html#index-0">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-activecode"><strong>activecode</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/10_timer_events.html#index-0">after method</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/10_timer_events.html#index-0">after_cancel method</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-algorithm"><strong>algorithm</strong></a>, <a href="MoreAboutIteration/Glossary.html#term-algorithm"><strong>[1]</strong></a>, <a href="GeneralIntro/SpecialWaystoExecutePythoninthisBook.html#index-0">[2]</a>, <a href="MoreAboutIteration/AlgorithmsRevisited.html#index-0">[3]</a>, <a href="MoreAboutIteration/NewtonsMethod.html#index-1">[4]</a>
+
+      <ul>
+        <li><a href="PythonModules/Therandommodule.html#index-0">deterministic</a>
+</li>
+      </ul></li>
+      <li><a href="Lists/Aliasing.html#index-0">alias</a>
+
+      <ul>
+        <li><a href="Dictionaries/Aliasingandcopying.html#index-0">dictionary</a>
+</li>
+      </ul></li>
+      <li><a href="Lists/Glossary.html#term-aliases"><strong>aliases</strong></a>
+</li>
+      <li><a href="GeneralIntro/FormalandNaturalLanguages.html#term-ambiguity"><strong>ambiguity</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askcolor</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askdirectory</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askfloat</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askinteger</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askokcancel</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askopenfilename</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askopenfilenames</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askretrycancel</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">asksaveasfilename</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askstring</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askyesno</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">askyesnocancel</a>
+</li>
+      <li><a href="UnitTesting/Glossary.html#term-assert-statement"><strong>assert statement</strong></a>, <a href="UnitTesting/CheckingAssumptionsWithAssert.html#index-2">[1]</a>
+</li>
+      <li><a href="MoreAboutIteration/intro-IterationRevisited.html#index-0">assignment</a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[1]</a>
+
+      <ul>
+        <li><a href="Lists/TupleAssignment.html#index-0">tuple</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/Glossary.html#term-assignment-statement"><strong>assignment statement</strong></a>, <a href="MoreAboutIteration/intro-IterationRevisited.html#index-0">[1]</a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[2]</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-assignment-token"><strong>assignment token</strong></a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-attribute"><strong>attribute</strong></a>, <a href="PythonTurtle/Glossary.html#term-attribute"><strong>[1]</strong></a>, <a href="ClassesBasics/UserDefinedClasses.html#index-0">[2]</a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-1">[3]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Functions/ATurtleBarChart.html#index-0">bar chart</a>
+</li>
+      <li><a href="IntroRecursion/Glossary.html#term-base-case"><strong>base case</strong></a>
+</li>
+      <li><a href="Selection/Glossary.html#term-block"><strong>block</strong></a>, <a href="Selection/PrecedenceofOperators.html#index-0">[1]</a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-body"><strong>body</strong></a>, <a href="Selection/Glossary.html#term-body"><strong>[1]</strong></a>, <a href="PythonTurtle/TheforLoop.html#index-0">[2]</a>, <a href="Selection/ConditionalExecutionBinarySelection.html#index-0">[3]</a>, <a href="Selection/PrecedenceofOperators.html#index-0">[4]</a>
+</li>
+      <li><a href="Selection/Glossary.html#term-boolean-expression"><strong>boolean expression</strong></a>
+</li>
+      <li><a href="Selection/Glossary.html#term-boolean-function"><strong>boolean function</strong></a>
+</li>
+      <li><a href="Selection/Glossary.html#term-boolean-value"><strong>boolean value</strong></a>, <a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Debugging/HowtoAvoidDebugging.html#index-0">boundary conditions</a>
+</li>
+      <li>
+    braces
+
+      <ul>
+        <li><a href="Strings/StringMethods.html#index-0">format string</a>
+</li>
+      </ul></li>
+      <li><a href="Selection/Glossary.html#term-branch"><strong>branch</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-bug"><strong>bug</strong></a>, <a href="GeneralIntro/MoreAboutPrograms.html#index-0">[1]</a>, <a href="GeneralIntro/WhatisDebugging.html#index-0">[2]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Button</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-byte-code"><strong>byte code</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PythonTurtle/Glossary.html#term-canvas"><strong>canvas</strong></a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-1">[1]</a>
+</li>
+      <li><a href="Selection/Glossary.html#term-chained-conditional"><strong>chained conditional</strong></a>, <a href="Selection/Chainedconditionals.html#index-0">[1]</a>
+</li>
+      <li><a href="Strings/StringsRevisited.html#index-0">character</a>
+</li>
+      <li><a href="Functions/Glossary.html#term-chatterbox-function"><strong>chatterbox function</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Checkbutton</a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-class"><strong>class</strong></a>, <a href="SimplePythonData/Glossary.html#term-class"><strong>[1]</strong></a>, <a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">[2]</a>
+
+      <ul>
+        <li><a href="ClassesBasics/UserDefinedClasses.html#index-0">user defined</a>
+</li>
+      </ul></li>
+      <li><a href="WebApps/Glossary.html#term-Client-side-web-applications"><strong>Client-side web applications</strong></a>
+</li>
+      <li><a href="Lists/Glossary.html#term-clone"><strong>clone</strong></a>, <a href="Lists/CloningLists.html#index-0">[1]</a>
+</li>
+      <li><a href="Files/Glossary.html#term-close"><strong>close</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-codelens"><strong>codelens</strong></a>
+</li>
+      <li><a href="Strings/Glossary.html#term-collection-data-type"><strong>collection data type</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">colorchooser</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Combobox</a>
+</li>
+      <li><a href="Labs/pythonshell.html#term-command-line"><strong>command line</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-comment"><strong>comment</strong></a>, <a href="SimplePythonData/Glossary.html#term-comment"><strong>[1]</strong></a>
+</li>
+      <li><a href="GeneralIntro/ATypicalFirstProgram.html#index-0">comments</a>
+</li>
+      <li>
+    comparison
+
+      <ul>
+        <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">numbers</a>
+</li>
+        <li><a href="Strings/StringComparison.html#index-0">strings</a>
+</li>
+      </ul></li>
+      <li><a href="Selection/Glossary.html#term-comparison-operator"><strong>comparison operator</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GeneralIntro/Glossary.html#term-compile"><strong>compile</strong></a>, <a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">[1]</a>
+</li>
+      <li><a href="Functions/Composition.html#index-0">composition</a>
+
+      <ul>
+        <li><a href="Functions/Glossary.html#term-composition-of-functions"><strong>(of functions)</strong></a>
+</li>
+      </ul></li>
+      <li><a href="Strings/StringsRevisited.html#index-0">compound data type</a>
+</li>
+      <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">compound statement</a>, <a href="Selection/PrecedenceofOperators.html#index-0">[1]</a>
+</li>
+      <li><a href="Strings/Loopingandcounting.html#index-0">computation pattern</a>
+</li>
+      <li><a href="Strings/ACollectionDataType.html#index-0">concatenation</a>
+</li>
+      <li><a href="Selection/Glossary.html#term-condition"><strong>condition</strong></a>
+</li>
+      <li>
+    conditional
+
+      <ul>
+        <li><a href="Selection/Chainedconditionals.html#index-0">chained</a>
+</li>
+        <li><a href="Selection/Nestedconditionals.html#index-0">nested</a>
+</li>
+      </ul></li>
+      <li><a href="Selection/PrecedenceofOperators.html#index-0">conditional branching</a>
+</li>
+      <li><a href="Selection/PrecedenceofOperators.html#index-0">conditional execution</a>
+</li>
+      <li><a href="Selection/Glossary.html#term-conditional-statement"><strong>conditional statement</strong></a>, <a href="Selection/ConditionalExecutionBinarySelection.html#index-0">[1]</a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-constructor"><strong>constructor</strong></a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-control-flow"><strong>control flow</strong></a>, <a href="PythonTurtle/FlowofExecutionoftheforLoop.html#index-0">[1]</a>
+</li>
+      <li>
+    copy
+
+      <ul>
+        <li><a href="Dictionaries/Aliasingandcopying.html#index-0">dictionary</a>
+</li>
+      </ul></li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-counter"><strong>counter</strong></a>
+</li>
+      <li><a href="Strings/TurtlesandStringsandLSystems.html#index-0">counting pattern</a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-cursor"><strong>cursor</strong></a>, <a href="MoreAboutIteration/SimpleTables.html#index-0">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="IntroRecursion/Glossary.html#term-data-structure"><strong>data structure</strong></a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-data-type"><strong>data type</strong></a>, <a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">[1]</a>
+</li>
+      <li><a href="Functions/Glossary.html#term-dead-code"><strong>dead code</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-debugging"><strong>debugging</strong></a>, <a href="Debugging/HowtoAvoidDebugging.html#index-0">[1]</a>, <a href="GeneralIntro/MoreAboutPrograms.html#index-0">[2]</a>, <a href="GeneralIntro/WhatisDebugging.html#index-0">[3]</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-decrement"><strong>decrement</strong></a>
+</li>
+      <li><a href="ClassesDiggingDeeper/Glossary.html#term-deep-copy"><strong>deep copy</strong></a>
+</li>
+      <li><a href="ClassesDiggingDeeper/Glossary.html#term-deep-equality"><strong>deep equality</strong></a>, <a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">[1]</a>
+</li>
+      <li><a href="Strings/Glossary.html#term-default-value"><strong>default value</strong></a>, <a href="Strings/Optionalparameters.html#index-0">[1]</a>
+</li>
+      <li><a href="UnitTesting/CheckingAssumptionsWithAssert.html#index-1">defensive functions</a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-definite-iteration"><strong>definite iteration</strong></a>
+</li>
+      <li>
+    definition
+
+      <ul>
+        <li><a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">function</a>
+</li>
+      </ul></li>
+      <li>
+    del
+
+      <ul>
+        <li><a href="Lists/ListDeletion.html#index-0">a list portion</a>
+</li>
+        <li><a href="Dictionaries/Dictionaryoperations.html#index-0">dictionary</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Lists/ListsareMutable.html#index-0">del statement</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-delimiter"><strong>delimiter</strong></a>
+</li>
+      <li><a href="UnitTesting/Glossary.html#term-design-by-contract"><strong>design by contract</strong></a>, <a href="UnitTesting/DesigningTestableFunctions.html#index-0">[1]</a>
+</li>
+      <li><a href="PythonModules/Glossary.html#term-deterministic"><strong>deterministic</strong></a>
+</li>
+      <li><a href="PythonModules/Therandommodule.html#index-0">deterministic algorithm</a>
+</li>
+      <li><a href="Exceptions/03_standard_exceptions.html#index-0">dialog box</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[2]</a>
+</li>
+      <li><a href="Dictionaries/Glossary.html#term-dictionary"><strong>dictionary</strong></a>, <a href="Dictionaries/intro-Dictionaries.html#index-0">[1]</a>
+
+      <ul>
+        <li><a href="Dictionaries/Aliasingandcopying.html#index-0">alias and copy</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-1">division /  //  % remainder</a>
+</li>
+      <li><a href="PythonModules/Glossary.html#term-documentation"><strong>documentation</strong></a>
+</li>
+      <li><a href="PythonModules/modules.html#index-0">documentation online</a>
+</li>
+      <li><a href="Strings/Glossary.html#term-dot-notation"><strong>dot notation</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Lists/Glossary.html#term-element"><strong>element</strong></a>
+</li>
+      <li><a href="Selection/PrecedenceofOperators.html#index-0">elif</a>
+</li>
+      <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">else</a>, <a href="Selection/PrecedenceofOperators.html#index-0">[1]</a>
+
+      <ul>
+        <li><a href="Selection/OmittingtheelseClauseUnarySelection.html#index-0">omitted</a>
+</li>
+      </ul></li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Entry</a>
+</li>
+      <li><a href="Lists/AppendversusConcatenate.html#index-0">enumerate</a>
+</li>
+      <li><a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">equality</a>
+
+      <ul>
+        <li><a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">deep</a>
+</li>
+        <li><a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">shallow</a>
+</li>
+      </ul></li>
+      <li><a href="Functions/UnitTesting.html#index-0">equivalence class</a>
+</li>
+      <li>
+    error
+
+      <ul>
+        <li><a href="GeneralIntro/SemanticErrors.html#index-0">logic</a>
+</li>
+        <li><a href="GeneralIntro/RuntimeErrors.html#index-0">runtime</a>
+</li>
+        <li><a href="GeneralIntro/SemanticErrors.html#index-0">semantic</a>
+</li>
+        <li><a href="GeneralIntro/Syntaxerrors.html#index-0">syntax</a>
+</li>
+      </ul></li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-escape-sequence"><strong>escape sequence</strong></a>, <a href="MoreAboutIteration/SimpleTables.html#index-0">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Strings/Loopingandcounting.html#index-0">eureka traversal</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-evaluate"><strong>evaluate</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/06_command_events.html#index-0">event</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/07_event_binding.html#index-0">event binding</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/06_command_events.html#index-0">event description</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/07_event_binding.html#index-0">event descriptors</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-event-loop"><strong>event loop</strong></a>, <a href="Exceptions/03_standard_exceptions.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[2]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[3]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/06_command_events.html#index-0">event object</a>, <a href="GUIandEventDrivenProgramming/07_event_binding.html#index-0">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-event-driven-programming"><strong>event-driven programming</strong></a>, <a href="Exceptions/03_standard_exceptions.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[2]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[3]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-event-handler"><strong>event-handler</strong></a>, <a href="Exceptions/03_standard_exceptions.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[2]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[3]</a>
+</li>
+      <li><a href="Exceptions/01_intro_exceptions.html#index-0">except</a>
+</li>
+      <li><a href="Exceptions/01_intro_exceptions.html#index-0">Exception</a>
+</li>
+      <li><a href="Exceptions/glossary.html#term-exception"><strong>exception</strong></a>, <a href="GeneralIntro/Glossary.html#term-exception"><strong>[1]</strong></a>, <a href="Exceptions/01_intro_exceptions.html#index-1">[2]</a>, <a href="Exceptions/02_runtime_stack_and_raise_command.html#index-0">[3]</a>
+</li>
+      <li><a href="Exceptions/05_exceptions_syntax.html#index-0">exceptions syntax</a>, <a href="Exceptions/06_the_finally_clause.html#index-0">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-executable"><strong>executable</strong></a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-expression"><strong>expression</strong></a>, <a href="SimplePythonData/StatementsandExpressions.html#index-0">[1]</a>, <a href="SimplePythonData/StatementsandExpressions.html#index-1">[2]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">False</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">filedialog</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-float"><strong>float</strong></a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[1]</a>, <a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">[2]</a>
+</li>
+      <li><a href="Functions/FlowofExecutionSummary.html#index-0">flow of execution</a>, <a href="PythonTurtle/FlowofExecutionoftheforLoop.html#index-0">[1]</a>
+</li>
+      <li><a href="Exceptions/01_intro_exceptions.html#index-1">flow-of-control</a>, <a href="Exceptions/02_runtime_stack_and_raise_command.html#index-0">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/07_event_binding.html#index-0">focus</a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-for-loop"><strong>for loop</strong></a>, <a href="Lists/AppendversusConcatenate.html#index-0">[1]</a>, <a href="Lists/AppendversusConcatenate.html#index-1">[2]</a>, <a href="MoreAboutIteration/intro-IterationRevisited.html#index-2">[3]</a>, <a href="PythonTurtle/InstancesAHerdofTurtles.html#index-0">[4]</a>, <a href="PythonTurtle/TheforLoop.html#index-0">[5]</a>, <a href="Strings/TraversalandtheforLoopByItem.html#index-0">[6]</a>
+</li>
+      <li><a href="Strings/Summary.html#term-for-loop-traversal-for"><strong>for loop traversal (for)</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-formal-language"><strong>formal language</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Strings/StringMethods.html#index-0">format string</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">Frame</a>
+</li>
+      <li><a href="Functions/Glossary.html#term-fruitful-function"><strong>fruitful function</strong></a>, <a href="Functions/Functionsthatreturnvalues.html#index-1">[1]</a>
+</li>
+      <li><a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">function</a>
+
+      <ul>
+        <li><a href="Functions/Composition.html#index-0">composition</a>
+</li>
+        <li><a href="Strings/Length.html#index-0">len</a>
+</li>
+        <li><a href="Functions/mainfunction.html#index-0">main</a>
+</li>
+        <li><a href="Functions/Functionsthatreturnvalues.html#index-0">return</a>
+</li>
+      </ul></li>
+      <li><a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">function definition</a>
+</li>
+      <li><a href="Functions/Functionscancallotherfunctions.html#index-0">functional decomposition</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Functions/Functionscancallotherfunctions.html#index-0">generalization</a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-generalize"><strong>generalize</strong></a>
+</li>
+      <li><a href="PythonModules/modules.html#index-0">Global Module Index</a>
+</li>
+      <li><a href="Functions/Variablesandparametersarelocal.html#index-1">global scope</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Functions/Functionsthatreturnvalues.html#index-1">global variable</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-graphical-user-interface"><strong>graphical user interface</strong></a>, <a href="Exceptions/03_standard_exceptions.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[2]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[3]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/04_layout_managers.html#index-0">grid</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-GUI"><strong>GUI</strong></a>, <a href="Exceptions/03_standard_exceptions.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[2]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[3]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Exceptions/glossary.html#term-handle-an-exception"><strong>handle an exception</strong></a>
+</li>
+      <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">heading</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GeneralIntro/Glossary.html#term-high-level-language"><strong>high-level language</strong></a>, <a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">[1]</a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-HTML-Hypertext-Markup-Language-pages"><strong>HTML(Hypertext Markup Language) pages:</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-icon"><strong>icon</strong></a>
+</li>
+      <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">if</a>, <a href="Selection/PrecedenceofOperators.html#index-0">[1]</a>
+</li>
+      <li><a href="Selection/PrecedenceofOperators.html#index-0">if statement</a>
+</li>
+      <li><a href="Lists/ListSlices.html#index-1">immutable</a>, <a href="Strings/StringsareImmutable.html#index-0">[1]</a>
+</li>
+      <li><a href="IntroRecursion/Glossary.html#term-immutable-data-type"><strong>immutable data type</strong></a>, <a href="Strings/Glossary.html#term-immutable-data-type"><strong>[1]</strong></a>
+</li>
+      <li>
+    in
+
+      <ul>
+        <li><a href="Lists/ListMembership.html#index-0">membership operator</a>
+</li>
+      </ul></li>
+      <li><a href="Strings/Summary.html#term-in-and-not-in-operator-in-not-in"><strong>in and not in operator (in, not in)</strong></a>
+</li>
+      <li><a href="Strings/TraversalandthewhileLoop.html#index-0">in operator</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-increment"><strong>increment</strong></a>
+</li>
+      <li><a href="Functions/Glossary.html#term-incremental-development"><strong>incremental development</strong></a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-indefinite-iteration"><strong>indefinite iteration</strong></a>
+</li>
+      <li><a href="Lists/Glossary.html#term-index"><strong>index</strong></a>, <a href="Strings/Glossary.html#term-index"><strong>[1]</strong></a>, <a href="Lists/ListValues.html#index-1">[2]</a>, <a href="Strings/StringsRevisited.html#index-0">[3]</a>
+
+      <ul>
+        <li><a href="Strings/Length.html#index-0">negative</a>
+</li>
+        <li><a href="Strings/IndexOperatorWorkingwiththeCharactersofaString.html#index-0">string</a>
+</li>
+      </ul></li>
+      <li><a href="Strings/Summary.html#term-indexing"><strong>indexing ([])</strong></a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-infinite-loop"><strong>infinite loop</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="IntroRecursion/Glossary.html#term-infinite-recursion"><strong>infinite recursion</strong></a>
+</li>
+      <li><a href="Inheritance/01-PillarsOfOop.html#index-0">inheritance</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-initialization-of-a-variable"><strong>initialization (of a variable)</strong></a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-initializer-method"><strong>initializer method</strong></a>
+</li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-3">input</a>
+
+      <ul>
+        <li><a href="MoreAboutIteration/SentinelValuesAndValidation.html#index-1">validating</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-3">input dialog</a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-instance"><strong>instance</strong></a>, <a href="PythonTurtle/Glossary.html#term-instance"><strong>[1]</strong></a>, <a href="PythonTurtle/OurFirstTurtleProgram.html#index-0">[2]</a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-instantiate"><strong>instantiate</strong></a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-int"><strong>int</strong></a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[1]</a>, <a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">[2]</a>
+</li>
+      <li><a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">integer</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-integer-division"><strong>integer division</strong></a>, <a href="SimplePythonData/StatementsandExpressions.html#index-1">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-interpret"><strong>interpret</strong></a>, <a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">[1]</a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-invoke"><strong>invoke</strong></a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-1">[1]</a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-IP-address"><strong>IP address</strong></a>
+</li>
+      <li><a href="Lists/ObjectsandReferences.html#index-0">is operator</a>
+</li>
+      <li><a href="Lists/ListSlices.html#index-1">item assignment</a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-iteration"><strong>iteration</strong></a>, <a href="PythonTurtle/Glossary.html#term-iteration"><strong>[1]</strong></a>, <a href="MoreAboutIteration/intro-IterationRevisited.html#index-0">[2]</a>, <a href="PythonTurtle/TheforLoop.html#index-0">[3]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Lists/NestedLists.html#index-1">join</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Dictionaries/Glossary.html#term-key"><strong>key</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Dictionaries/Glossary.html#term-key-value-pair"><strong>key-value pair</strong></a>, <a href="Dictionaries/intro-Dictionaries.html#index-0">[1]</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-keyword"><strong>keyword</strong></a>, <a href="SimplePythonData/Variables.html#index-0">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Label</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">LabelFrame</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/04_layout_managers.html#index-0">layout manager</a>
+</li>
+      <li><a href="Strings/Length.html#index-0">len function</a>
+</li>
+      <li><a href="Strings/Summary.html#term-length-function-len"><strong>length function (len)</strong></a>
+</li>
+      <li><a href="Functions/Variablesandparametersarelocal.html#index-0">lifetime</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-list"><strong>list</strong></a>
+
+      <ul>
+        <li><a href="Lists/RepetitionandReferences.html#index-0">append</a>
+</li>
+        <li><a href="Lists/CloningLists.html#index-0">clone</a>
+</li>
+        <li><a href="Lists/ListComprehensions.html#index-0">nested</a>, <a href="Lists/intro-Lists.html#index-0">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="Lists/ListValues.html#index-1">list index</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Lists/Glossary.html#term-list-traversal"><strong>list traversal</strong></a>, <a href="Lists/ListValues.html#index-1">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Listbox</a>
+</li>
+      <li><a href="GeneralIntro/FormalandNaturalLanguages.html#term-literalness"><strong>literalness</strong></a>
+</li>
+      <li><a href="Functions/Variablesandparametersarelocal.html#index-1">local scope</a>
+</li>
+      <li><a href="Functions/Variablesandparametersarelocal.html#index-0">local variable</a>
+</li>
+      <li><a href="GeneralIntro/SemanticErrors.html#index-0">logic error</a>
+</li>
+      <li><a href="Selection/Glossary.html#term-logical-operator"><strong>logical operator</strong></a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-loop"><strong>loop</strong></a>
+
+      <ul>
+        <li><a href="PythonTurtle/TheforLoop.html#index-0">for</a>
+</li>
+      </ul></li>
+      <li><a href="PythonTurtle/Glossary.html#term-loop-body"><strong>loop body</strong></a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-loop-variable"><strong>loop variable</strong></a>, <a href="PythonTurtle/Glossary.html#term-loop-variable"><strong>[1]</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-low-level-language"><strong>low-level language</strong></a>, <a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Functions/mainfunction.html#index-0">main function</a>
+</li>
+      <li><a href="Dictionaries/Glossary.html#term-mapping-type"><strong>mapping type</strong></a>, <a href="Dictionaries/intro-Dictionaries.html#index-0">[1]</a>
+</li>
+      <li><a href="Dictionaries/Sparsematrices.html#index-0">matrix</a>, <a href="Lists/NestedLists.html#index-0">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Menu</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">MenuButton</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Message</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">messagebox</a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-method"><strong>method</strong></a>, <a href="PythonTurtle/Glossary.html#term-method"><strong>[1]</strong></a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-1">[2]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/12_model_view_controller.html#index-0">model-view-controller design pattern</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-modifier"><strong>modifier</strong></a>, <a href="Lists/UsingListsasParameters.html#index-0">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PythonModules/Glossary.html#term-module"><strong>module</strong></a>, <a href="PythonTurtle/Glossary.html#term-module"><strong>[1]</strong></a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">[2]</a>
+
+      <ul>
+        <li><a href="PythonModules/modules.html#index-0">standard</a>
+</li>
+        <li><a href="Strings/Characterclassification.html#index-0">string</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-2">modulus</a>
+</li>
+      <li><a href="Selection/Glossary.html#term-modulus-operator"><strong>modulus operator</strong></a>, <a href="SimplePythonData/Glossary.html#term-modulus-operator"><strong>[1]</strong></a>
+</li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-0">multiplication</a>
+</li>
+      <li><a href="Lists/ListSlices.html#index-1">mutable</a>, <a href="Strings/StringsareImmutable.html#index-0">[1]</a>
+</li>
+      <li><a href="IntroRecursion/Glossary.html#term-mutable-data-type"><strong>mutable data type</strong></a>, <a href="Lists/Glossary.html#term-mutable-data-type"><strong>[1]</strong></a>, <a href="ClassesDiggingDeeper/Fractions.html#index-0">[2]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/12_model_view_controller.html#index-0">MVC</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/12_model_view_controller.html#index-0">MVC version of Whack-a-mole game</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GeneralIntro/Glossary.html#term-natural-language"><strong>natural language</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+</li>
+      <li><a href="Strings/Length.html#index-0">negative index</a>
+</li>
+      <li><a href="Selection/Nestedconditionals.html#index-0">nested conditionals</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-nested-list"><strong>nested list</strong></a>, <a href="Lists/ListComprehensions.html#index-0">[1]</a>, <a href="Lists/intro-Lists.html#index-0">[2]</a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-nested-loop"><strong>nested loop</strong></a>
+</li>
+      <li><a href="Selection/Glossary.html#term-nesting"><strong>nesting</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="MoreAboutIteration/Glossary.html#term-newline"><strong>newline</strong></a>, <a href="MoreAboutIteration/SimpleTables.html#index-0">[1]</a>
+</li>
+      <li><a href="MoreAboutIteration/NewtonsMethod.html#index-0">Newton</a>
+</li>
+      <li><a href="MoreAboutIteration/The3n1Sequence.html#index-0">Newton&#39;s method</a>
+</li>
+      <li><a href="Functions/Glossary.html#term-None"><strong>None</strong></a>
+</li>
+      <li><a href="Lists/ListMembership.html#index-0">not in</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">Notebook</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ClassesBasics/Glossary.html#term-object"><strong>object</strong></a>, <a href="Lists/Glossary.html#term-object"><strong>[1]</strong></a>, <a href="PythonTurtle/Glossary.html#term-object"><strong>[2]</strong></a>, <a href="SimplePythonData/Glossary.html#term-object"><strong>[3]</strong></a>, <a href="ClassesBasics/Objectorientedprogramming.html#index-0">[4]</a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-1">[5]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-object-code"><strong>object code</strong></a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-object-oriented-language"><strong>object-oriented language</strong></a>
+</li>
+      <li><a href="ClassesBasics/Glossary.html#term-object-oriented-programming"><strong>object-oriented programming</strong></a>, <a href="ClassesBasics/Objectorientedprogramming.html#index-0">[1]</a>
+</li>
+      <li><a href="Lists/ObjectsandReferences.html#index-0">objects and values</a>
+</li>
+      <li><a href="ClassesBasics/Objectorientedprogramming.html#index-0">OOP</a>
+</li>
+      <li><a href="Files/Glossary.html#term-open"><strong>open</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="SimplePythonData/Glossary.html#term-operand"><strong>operand</strong></a>, <a href="SimplePythonData/StatementsandExpressions.html#index-1">[1]</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-operator"><strong>operator</strong></a>, <a href="SimplePythonData/StatementsandExpressions.html#index-1">[1]</a>
+
+      <ul>
+        <li><a href="Strings/TraversalandthewhileLoop.html#index-0">in</a>
+</li>
+        <li><a href="Appendices/PrecedenceTable.html#index-0">precedence</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-0">operators and operands</a>
+</li>
+      <li><a href="Strings/Glossary.html#term-optional-parameter"><strong>optional parameter</strong></a>, <a href="Strings/Optionalparameters.html#index-0">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">OptionMenu</a>
+</li>
+      <li><a href="SimplePythonData/Input.html#index-0">order of operations</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/04_layout_managers.html#index-0">pack</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">PanedWindow</a>
+</li>
+      <li><a href="Lists/Listsandforloops.html#index-0">parameter</a>
+
+      <ul>
+        <li><a href="Strings/Optionalparameters.html#index-0">optional</a>
+</li>
+      </ul></li>
+      <li><a href="GeneralIntro/Glossary.html#term-parse"><strong>parse</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+</li>
+      <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">pass</a>
+</li>
+      <li><a href="Selection/PrecedenceofOperators.html#index-0">pass statement</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-pattern"><strong>pattern</strong></a>
+</li>
+      <li><a href="Strings/Loopingandcounting.html#index-0">pattern of computation</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/04_layout_managers.html#index-0">place</a>
+</li>
+      <li><a href="GeneralIntro/FormalandNaturalLanguages.html#term-poetry"><strong>poetry</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-portability"><strong>portability</strong></a>
+</li>
+      <li><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">portable</a>
+</li>
+      <li><a href="UnitTesting/Glossary.html#term-postcondition"><strong>postcondition</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Appendices/PrecedenceTable.html#index-0">precedence</a>
+</li>
+      <li><a href="UnitTesting/Glossary.html#term-precondition"><strong>precondition</strong></a>
+</li>
+      <li><a href="UnitTesting/CheckingAssumptionsWithAssert.html#index-0">preconditions</a>
+</li>
+      <li><a href="Exceptions/04_principles_for_using_exceptions.html#index-0">principles for using exceptions</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-print-function"><strong>print function</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-problem-solving"><strong>problem solving</strong></a>
+</li>
+      <li><a href="GeneralIntro/FormalandNaturalLanguages.html#term-program"><strong>program</strong></a>, <a href="GeneralIntro/Glossary.html#term-program"><strong>[1]</strong></a>, <a href="GeneralIntro/SpecialWaystoExecutePythoninthisBook.html#index-0">[2]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-programming-language"><strong>programming language</strong></a>, <a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Progressbar</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-prompt-string"><strong>prompt string</strong></a>
+</li>
+      <li><a href="GeneralIntro/FormalandNaturalLanguages.html#term-prose"><strong>prose</strong></a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-protocol"><strong>protocol</strong></a>
+</li>
+      <li><a href="PythonModules/Glossary.html#term-pseudo-random-number"><strong>pseudo-random number</strong></a>
+</li>
+      <li><a href="Lists/Glossary.html#term-pure-function"><strong>pure function</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-Python-shell"><strong>Python shell</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="WebApps/Glossary.html#term-query-string"><strong>query string</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Radiobutton</a>
+</li>
+      <li><a href="Exceptions/glossary.html#term-raise"><strong>raise</strong></a>, <a href="Exceptions/01_intro_exceptions.html#index-1">[1]</a>, <a href="Exceptions/02_runtime_stack_and_raise_command.html#index-0">[2]</a>
+</li>
+      <li><a href="PythonModules/Glossary.html#term-random-number"><strong>random number</strong></a>
+</li>
+      <li><a href="PythonModules/Glossary.html#term-random-number-generator"><strong>random number generator</strong></a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-range"><strong>range</strong></a>
+</li>
+      <li><a href="Files/Glossary.html#term-read"><strong>read</strong></a>
+</li>
+      <li><a href="Files/Glossary.html#term-readline"><strong>readline</strong></a>
+</li>
+      <li><a href="Files/Glossary.html#term-readlines"><strong>readlines</strong></a>
+</li>
+      <li><a href="MoreAboutIteration/Glossary.html#term-reassignment"><strong>reassignment</strong></a>, <a href="MoreAboutIteration/intro-IterationRevisited.html#index-0">[1]</a>
+</li>
+      <li><a href="IntroRecursion/Glossary.html#term-recursion"><strong>recursion</strong></a>
+</li>
+      <li><a href="IntroRecursion/Glossary.html#term-recursive-call"><strong>recursive call</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="IntroRecursion/Glossary.html#term-recursive-definition"><strong>recursive definition</strong></a>
+</li>
+      <li><a href="GeneralIntro/FormalandNaturalLanguages.html#term-redundancy"><strong>redundancy</strong></a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-reference-diagram"><strong>reference diagram</strong></a>
+</li>
+      <li><a href="Files/Glossary.html#term-relative-file-path"><strong>relative file path</strong></a>, <a href="Files/FindingaFileonyourDisk.html#index-0">[1]</a>
+</li>
+      <li><a href="SimplePythonData/OperatorsandOperands.html#index-2">remainder</a>
+</li>
+      <li><a href="Functions/Functionsthatreturnvalues.html#index-0">return</a>
+
+      <ul>
+        <li><a href="Lists/TuplesasReturnValues.html#index-0">tuple</a>
+</li>
+      </ul></li>
+      <li><a href="Functions/Glossary.html#term-return-value"><strong>return value</strong></a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-rules-of-precedence"><strong>rules of precedence</strong></a>, <a href="SimplePythonData/Input.html#index-0">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-runtime-error"><strong>runtime error</strong></a>, <a href="GeneralIntro/RuntimeErrors.html#index-0">[1]</a>, <a href="Strings/Length.html#index-0">[2]</a>
+
+      <ul>
+        <li><a href="Strings/StringsareImmutable.html#index-0">string item assignment</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ClassesDiggingDeeper/Sameness.html#index-0">sameness</a>
+</li>
+      <li><a href="Functions/Glossary.html#term-scaffolding"><strong>scaffolding</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Scale</a>
+</li>
+      <li><a href="Functions/Variablesandparametersarelocal.html#index-1">scope</a>
+</li>
+      <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">selection</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-semantic-error"><strong>semantic error</strong></a>, <a href="GeneralIntro/SemanticErrors.html#index-0">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-semantics"><strong>semantics</strong></a>
+</li>
+      <li><a href="MoreAboutIteration/SentinelValuesAndValidation.html#index-0">sentinel value</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Separator</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-sequence"><strong>sequence</strong></a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-sequential"><strong>sequential</strong></a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-server"><strong>server</strong></a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-Server-side-web-applications"><strong>Server-side web applications</strong></a>
+</li>
+      <li><a href="Functions/Variablesandparametersarelocal.html#index-2">shadow</a>
+</li>
+      <li><a href="ClassesDiggingDeeper/Glossary.html#term-shallow-copy"><strong>shallow copy</strong></a>
+</li>
+      <li><a href="ClassesDiggingDeeper/Glossary.html#term-shallow-equality"><strong>shallow equality</strong></a>, <a href="ClassesDiggingDeeper/ObjectsareMutable.html#index-0">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-shell-mode"><strong>shell mode</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">showerror</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">showinfo</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">showwarning</a>
+</li>
+      <li><a href="Lists/Glossary.html#term-side-effect"><strong>side effect</strong></a>, <a href="Lists/UsingListsasParameters.html#index-0">[1]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/02_standard_dialog_boxes.html#index-0">simpledialog</a>
+</li>
+      <li><a href="Strings/Glossary.html#term-slice"><strong>slice</strong></a>
+
+      <ul>
+        <li><a href="Lists/ListSlices.html#index-0">list</a>
+</li>
+        <li><a href="Strings/TheSliceOperator.html#index-0">string</a>
+</li>
+      </ul></li>
+      <li><a href="Strings/Summary.html#term-slicing"><strong>slicing ([:])</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GeneralIntro/Glossary.html#term-source-code"><strong>source code</strong></a>
+</li>
+      <li><a href="Dictionaries/Sparsematrices.html#index-0">sparse matrix</a>
+</li>
+      <li><a href="UnitTesting/Glossary.html#term-specification-based-tests"><strong>specification-based tests</strong></a>
+</li>
+      <li><a href="Lists/NestedLists.html#index-1">split</a>
+</li>
+      <li><a href="PythonModules/Glossary.html#term-standard-library"><strong>standard library</strong></a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-state"><strong>state</strong></a>, <a href="PythonTurtle/intro-HelloLittleTurtles.html#index-1">[1]</a>
+</li>
+      <li><a href="ClassesBasics/ObjectsRevisited.html#index-0">state of an object</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-state-snapshot"><strong>state snapshot</strong></a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[1]</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-statement"><strong>statement</strong></a>, <a href="SimplePythonData/VariableNamesandKeywords.html#index-0">[1]</a>
+
+      <ul>
+        <li><a href="MoreAboutIteration/intro-IterationRevisited.html#index-1">assignment</a>
+</li>
+        <li><a href="Dictionaries/Dictionaryoperations.html#index-0">del</a>, <a href="Lists/ListsareMutable.html#index-0">[1]</a>
+</li>
+        <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">if</a>
+</li>
+        <li><a href="Selection/ConditionalExecutionBinarySelection.html#index-0">pass</a>
+</li>
+      </ul></li>
+      <li><a href="Selection/PrecedenceofOperators.html#index-0">statement block</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-str"><strong>str</strong></a>, <a href="SimplePythonData/ValuesandDataTypes.html#index-0">[1]</a>
+</li>
+      <li><a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">string</a>
+
+      <ul>
+        <li><a href="Strings/StringComparison.html#index-0">comparison</a>
+</li>
+        <li><a href="Strings/StringMethods.html#index-0">format method</a>
+</li>
+        <li><a href="Strings/StringsareImmutable.html#index-0">immutable</a>
+</li>
+        <li><a href="Strings/IndexOperatorWorkingwiththeCharactersofaString.html#index-0">index</a>
+</li>
+      </ul></li>
+      <li><a href="Strings/Summary.html#term-string-comparison"><strong>string comparison (&gt;, &lt;, &gt;=, &lt;=, ==, !=)</strong></a>
+</li>
+      <li><a href="Strings/Characterclassification.html#index-0">string module</a>
+</li>
+      <li><a href="Strings/ACollectionDataType.html#index-0">string operations</a>
+</li>
+      <li><a href="Lists/NestedLists.html#index-1">strings and lists</a>
+</li>
+      <li><a href="Strings/StringsRevisited.html#index-0">subscript operator</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-syntax"><strong>syntax</strong></a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-syntax-error"><strong>syntax error</strong></a>, <a href="GeneralIntro/Syntaxerrors.html#index-0">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="MoreAboutIteration/Glossary.html#term-tab"><strong>tab</strong></a>, <a href="MoreAboutIteration/SimpleTables.html#index-0">[1]</a>
+</li>
+      <li><a href="MoreAboutIteration/SimpleTables.html#index-0">table</a>
+</li>
+      <li><a href="Functions/Glossary.html#term-temporary-variable"><strong>temporary variable</strong></a>
+</li>
+      <li><a href="Labs/pythonshell.html#term-terminal"><strong>terminal</strong></a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-terminating-condition"><strong>terminating condition</strong></a>
+</li>
+      <li><a href="Debugging/HowtoAvoidDebugging.html#index-0">testing</a>, <a href="Functions/ProgramDevelopment.html#index-0">[1]</a>, <a href="Functions/UnitTesting.html#index-0">[2]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Text</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/10_timer_events.html#index-0">timer events</a>
+</li>
+      <li><a href="Exceptions/03_standard_exceptions.html#index-0">TKinter</a>, <a href="GUIandEventDrivenProgramming/01_intro_gui.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/08_gui_program_structure.html#index-0">[2]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Tkinter</a>, <a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">[1]</a>
+</li>
+      <li><a href="GeneralIntro/Glossary.html#term-token"><strong>token</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+</li>
+      <li><a href="Strings/Loopingandcounting.html#index-0">traversal</a>, <a href="Strings/TraversalandtheforLoopByItem.html#index-0">[1]</a>
+</li>
+      <li><a href="Strings/Glossary.html#term-traverse"><strong>traverse</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">Treeview</a>
+</li>
+      <li><a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-1">triple quoted string</a>
+</li>
+      <li><a href="Selection/BooleanValuesandBooleanExpressions.html#index-0">True</a>
+</li>
+      <li><a href="SimplePythonData/ValuesandDataTypes.html#index-0">truncation</a>
+</li>
+      <li><a href="Exceptions/01_intro_exceptions.html#index-0">try</a>
+</li>
+      <li><a href="Exceptions/01_intro_exceptions.html#index-1">try: except:</a>, <a href="Exceptions/02_runtime_stack_and_raise_command.html#index-0">[1]</a>
+</li>
+      <li><a href="IntroRecursion/Glossary.html#term-tuple"><strong>tuple</strong></a>, <a href="Lists/Glossary.html#term-tuple"><strong>[1]</strong></a>
+
+      <ul>
+        <li><a href="Lists/TupleAssignment.html#index-0">assignment</a>
+</li>
+        <li><a href="Lists/TuplesasReturnValues.html#index-0">return value</a>
+</li>
+      </ul></li>
+      <li><a href="IntroRecursion/Glossary.html#term-tuple-assignment"><strong>tuple assignment</strong></a>
+</li>
+      <li><a href="PythonTurtle/Glossary.html#term-turtle"><strong>turtle</strong></a>
+</li>
+      <li><a href="PythonTurtle/intro-HelloLittleTurtles.html#index-0">turtle module</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-type-conversion-function"><strong>type conversion function</strong></a>
+</li>
+      <li><a href="SimplePythonData/ValuesandDataTypes.html#index-0">type converter functions</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Selection/OmittingtheelseClauseUnarySelection.html#index-0">unary selection</a>
+</li>
+      <li><a href="SimplePythonData/Variables.html#index-0">underscore character</a>
+</li>
+      <li><a href="UnitTesting/Glossary.html#term-unit-test"><strong>unit test</strong></a>, <a href="Functions/ProgramDevelopment.html#index-0">[1]</a>, <a href="Functions/UnitTesting.html#index-0">[2]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PythonModules/Therandommodule.html#index-0">unit tests</a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-URL-Uniform-Resource-Locator"><strong>URL (Uniform Resource Locator)</strong></a>
+</li>
+      <li><a href="ClassesBasics/UserDefinedClasses.html#index-0">user defined class</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="MoreAboutIteration/SentinelValuesAndValidation.html#index-1">validation</a>
+</li>
+      <li><a href="SimplePythonData/Glossary.html#term-value"><strong>value</strong></a>, <a href="SimplePythonData/intro-VariablesExpressionsandStatements.html#index-0">[1]</a>
+
+      <ul>
+        <li><a href="Dictionaries/intro-Dictionaries.html#index-0">dictionary</a>
+</li>
+        <li><a href="MoreAboutIteration/SentinelValuesAndValidation.html#index-0">sentinel</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="SimplePythonData/Glossary.html#term-variable"><strong>variable</strong></a>, <a href="SimplePythonData/Typeconversionfunctions.html#index-0">[1]</a>
+
+      <ul>
+        <li><a href="Functions/Functionsthatreturnvalues.html#index-1">global</a>
+</li>
+        <li><a href="Functions/Variablesandparametersarelocal.html#index-0">local</a>
+</li>
+      </ul></li>
+      <li><a href="SimplePythonData/Glossary.html#term-variable-name"><strong>variable name</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="WebApps/01-WebApps.html#index-0">web applications</a>
+</li>
+      <li><a href="WebApps/Glossary.html#term-web-browser"><strong>web browser</strong></a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/11_gui_program_example.html#index-0">Whack-a-mole game</a>
+</li>
+      <li><a href="Strings/Glossary.html#term-whitespace"><strong>whitespace</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="GUIandEventDrivenProgramming/Glossary.html#term-widget"><strong>widget</strong></a>, <a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">[1]</a>, <a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">[2]</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/09_modifying_widgets.html#index-0">widget attributes</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/06_command_events.html#index-0">widget command property</a>
+</li>
+      <li><a href="GUIandEventDrivenProgramming/03_widgets.html#index-0">widget hierarchy</a>, <a href="GUIandEventDrivenProgramming/05_widget_grouping.html#index-0">[1]</a>
+</li>
+      <li><a href="Files/Glossary.html#term-write"><strong>write</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum, Created using Runestone Interactive.
+      Last updated on Nov 13, 2021.<br/>
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.5.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.2. Checking Assumptions With assert &#8212; How to Think like a Computer Scientist: Interactive Edition</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.5" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=92D8BBF0"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="20.3. Testing Functions" href="TestingFunctions.html" />
+    <link rel="prev" title="20.1. Introduction: Unit Testing" href="intro-UnitTesting.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/{{ =request.application }}/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = true;
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/' + '{{= request.application }}';
+    eBookConfig.course = '{{= course_name }}';
+    eBookConfig.basecourse = '{{= base_course }}';
+    eBookConfig.isLoggedIn = {{= is_logged_in}};
+    eBookConfig.email = '{{= user_email }}';
+    eBookConfig.isInstructor = {{= is_instructor }};
+    eBookConfig.username = '{{= user_id}}';
+    eBookConfig.readings = {{= readings}};
+    eBookConfig.activities = {{= XML(activity_info) }}
+    eBookConfig.downloadsEnabled = {{=downloads_enabled}};
+    eBookConfig.allow_pairs = {{=allow_pairs}}
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.5';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+    
+        {{ if response.serve_ad and settings.adsenseid: }}
+         <script data-ad-client="{{=settings.adsenseid}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {{ pass }}
+    
+
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/{{ =request.application }}/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+            
+            {{ =course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span aria-label="User" class="visuallyhidden">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/{{ =request.application }}/assignments/chooseAssignment.html'>Assignments</a></li>
+            <li><a href='/{{ =request.application }}/assignments/practice'>Practice</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/{{ =request.application }}/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/{{ =request.application }}/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/{{ =request.application }}/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/{{ =request.application }}/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/{{ =request.application }}/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/{{ =request.application }}/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+			<!-- dark mode toggle -->
+             <li><label class="theme-switch" for="checkbox">
+					  <input type="checkbox" id="checkbox" onchange="switchTheme()" />
+							<div class="slider round"></div>
+					</label>Dark Mode</li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/{{ =request.application }}/default/reportabug?course=thinkcspy&page=CheckingAssumptionsWithAssert'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script>
+</script>
+<li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown" aria-label="index">This Chapter<b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc">
+      
+      {{ for row in subchapter_list: }}
+        <li class=toctree-l1><a class="reference internal" href="{{= row['subchap_uri']}}">{{= row['title']}}</a></li>
+      {{ pass }}
+      
+  </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">20.1. </span>Introduction: Unit Testing" data-toggle="tooltip">
+    <a href="intro-UnitTesting.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">20.3. </span>Testing Functions' data-toggle="tooltip" >              
+    <a href="TestingFunctions.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+    
+        {{ if settings.num_banners > 0 and settings.show_rs_banner: }}
+         <div style="width: 100%;">
+            <a href="/runestone/default/donate?banner={{=banner_num}}">
+            <img class="runestone-banner"
+                 src="/runestone/static/images/RunestoneBanner{{=banner_num}}.png"
+                 alt="Please Support Runestone"
+                 style="display: block; width: 728px; margin-left: auto; margin-right: auto; margin-top: 10px;">
+            </a>
+         </div>
+        {{ pass }}
+    
+
+
+  
+  <div class="section" id="checking-assumptions-with-assert">
+<span id="index-0"></span><h1><span class="section-number">20.2. </span>Checking Assumptions With <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#checking-assumptions-with-assert" title="Permalink to this headline">¶</a></h1>
+<p>Many functions work correctly only for certain parameter values, and produce invalid results (or crash) if given others.
+Consider the following function, which computes the sum of the numbers in a range specified by its parameters:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ac_sumnums_1 >
+<div id=ac_sumnums_1_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ac_sumnums_1_editor" data-question_label="20.2.1" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+def sumnums(lo, hi):
+    """returns the sum of the numbers in the range [lo..hi]"""
+
+    sum = 0
+    for i in range(lo, hi+1):
+        sum += i
+    return sum
+
+print(sumnums(1, 3))
+print(sumnums(3, 1))
+</textarea>
+</div>
+</div>
+<p>Notice that the first call to sumnums produces the correct answer (6), while the second call produces an incorrect answer.
+<code class="docutils literal notranslate"><span class="pre">sumnums</span></code> works correctly only if <code class="docutils literal notranslate"><span class="pre">lo</span></code> has a value that is less than, or equal to, <code class="docutils literal notranslate"><span class="pre">hi</span></code>.</p>
+<p>This function trusts the calling code to provide parameter values that are valid. If the caller provides a second
+parameter that is lower than the first parameter, the function does not produce a correct result. That’s not
+the fault of the function; the function isn’t designed to work correctly if <code class="docutils literal notranslate"><span class="pre">lo</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">hi</span></code>.</p>
+<p>To make it clear that the function is designed to work correctly only if <code class="docutils literal notranslate"><span class="pre">lo</span></code> &lt;= <code class="docutils literal notranslate"><span class="pre">hi</span></code>, it’s a good idea to state
+that as a precondition in the function documentation, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumnums</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns the sum of the numbers in the range [lo..hi]</span>
+
+<span class="sd">    Precondition: lo &lt;= hi</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="admonition-precondition admonition">
+<p class="admonition-title">Precondition</p>
+<p>A <strong>precondition</strong> specifies a condition that must be True if the function is to produce correct results.</p>
+</div>
+<p>A precondition places a constraint on the values of the parameters that the caller can pass and expect to receive a
+valid result. Preconditions are boolean expressions – comparisons that you might write in an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.
+We’ll have more to say about preconditions later in the chapter.</p>
+<p>Code that calls a function is responsible for passing parameters that satisfy the function’s preconditions. If the
+calling code passes values that violate the function’s preconditions, the function isn’t expected to work correctly.
+That’s not the function’s fault: it’s the caller’s fault for passing parameters to the function that the function is not
+designed to handle correctly. However, it might be a good idea if we designed the function to check for invalid values,
+and when it detects them, somehow report that it was called incorrectly.</p>
+<div class="section" id="designing-defensive-functions">
+<span id="index-1"></span><h2><span class="section-number">20.2.1. </span>Designing Defensive Functions<a class="headerlink" href="#designing-defensive-functions" title="Permalink to this headline">¶</a></h2>
+<p>A defensive function is a function that checks its parameters to see if they are valid, and responds in an appropriate
+way if they are invalid. That raises the question: what should a defensive function do if it receives invalid values?
+Should it print an error? Silently ignore the problem and return a default value? Return a special value that indicates
+an error? Exit the program? There are several options.</p>
+<p>As an example, here is one way we could make <code class="docutils literal notranslate"><span class="pre">sumnums</span></code> defensive:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ac_sumnums_2 >
+<div id=ac_sumnums_2_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ac_sumnums_2_editor" data-question_label="20.2.1.1" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+def sumnums(lo, hi):
+    """returns the sum of the numbers in the range [lo..hi]
+
+    Precondition: lo <= hi
+    """
+
+    if lo > hi:
+        print('Alert: Invalid parameters to sumnums.')
+        return -1
+
+    sum = 0
+    for i in range(lo, hi+1):
+        sum += i
+    return sum
+
+print(sumnums(1, 3))
+print(sumnums(3, 1))
+</textarea>
+</div>
+</div>
+<p>In this version, the function checks to see if the preconditions are violated, and if so, it complains by printing a
+message and returns the value -1 to the caller.</p>
+<div class="admonition-defensive-programming admonition">
+<p class="admonition-title">Defensive Programming</p>
+<p>The strategy of designing functions that check their parameters embodies a principle of software design called
+<strong>defensive programming</strong>, in which software checks for invalid inputs and responds in an appropriate way.
+Defensive programming is especially important for mission critical systems, but it can be a helpful
+strategy in regular software projects, as we’ll soon see.</p>
+</div>
+<p>This is an improvement over the original function, because now, if the function is called with invalid data,
+the user will see a message that something is wrong. However, the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement adds three lines of code to the
+function. That may not seem like much, but it clutters the code and, in a typical program with several functions,
+those if statements will start to feel like undesirable baggage. There’s a better way.</p>
+</div>
+<div class="section" id="the-assert-statement">
+<span id="index-2"></span><h2><span class="section-number">20.2.2. </span>The <code class="docutils literal notranslate"><span class="pre">assert</span></code> Statement<a class="headerlink" href="#the-assert-statement" title="Permalink to this headline">¶</a></h2>
+<p>Python provides a statement called the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement that can be used to check function
+preconditions. An <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement checks the value of a boolean expression. If the expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the
+assert statement allows the program to proceed normally. But if the expression is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the assert
+statement signals an error and stops the program.</p>
+<p>Here’s an example of an assert statement:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ac_assert_1 >
+<div id=ac_assert_1_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ac_assert_1_editor" data-question_label="20.2.2.1" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+x = 1 + 1
+assert x == 2
+print(x)
+</textarea>
+</div>
+</div>
+<p>To see it in action, run the example above. You’ll see the value <code class="docutils literal notranslate"><span class="pre">2</span></code> displayed. The boolean condition <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">2</span></code>
+was True, and the assert statement allowed execution to continue.</p>
+<p>Try changing the assert statement above as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Run this version of the code, and you’ll see an AssertionError appear. That occurred because the value of the boolean
+expression was <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Let’s modify our sumnums function to use an assert statement to check the precondition:</p>
+
+<div class="runestone explainer ac_section alert alert-warning">
+<div data-component="activecode" id=ac_sumnums_3 >
+<div id=ac_sumnums_3_question class="ac_question col-md-12">
+
+</div>
+<textarea data-lang="python" id="ac_sumnums_3_editor" data-question_label="20.2.2.2" 
+      data-timelimit=25000  data-codelens="true"   
+    data-audio=''      
+           data-wasm=/_static
+    style="visibility: hidden;">
+def sumnums(lo, hi):
+    """returns the sum of the numbers in the range [lo..hi]
+
+    Precondition: lo <= hi
+    """
+
+    assert lo <= hi
+
+    sum = 0
+    for i in range(lo, hi+1):
+        sum += i
+    return sum
+
+print(sumnums(1, 3))
+print(sumnums(3, 1))
+</textarea>
+</div>
+</div>
+<p>In this version of <code class="docutils literal notranslate"><span class="pre">sumnums</span></code>, we’ve replaced the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement with an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement. Notice that the boolean
+condition of the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement is the precondition, <code class="docutils literal notranslate"><span class="pre">lo</span> <span class="pre">&lt;=</span> <span class="pre">hi</span></code>. When the function is called, if the
+condition is true, the function completes normally and returns its result. If the condition is false, the program stops
+with an AssertionError. So, the first call to <code class="docutils literal notranslate"><span class="pre">sumnums(1,</span> <span class="pre">3)</span></code> succeeds and the result, 6, appears. The second call to
+<code class="docutils literal notranslate"><span class="pre">sumnums(3,</span> <span class="pre">1)</span></code> causes the assert to fail and an error appears.</p>
+<p>Notice how much more streamlined this version of the function is than the version with the three-line <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.
+Here, we’ve added just one line of code to the original version. Using assertions is a relatively low-effort way to
+create defensive functions.</p>
+<div class="admonition-writing-assert-statements-to-check-preconditions admonition">
+<p class="admonition-title">Writing assert statements to check preconditions</p>
+<p>Writing assert statements to check preconditions is easy. They go at the <strong>beginning</strong> of the function. When you
+write an assert statement to check a precondition, if the function comment already contains a precondition, you
+often can simply take the precondition and put it directly into the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement (you might have to tweak it
+to make it syntactically legal).  If there is no precondition in the function comment, think about how you would
+write an if statement to check that the values in the parameters are <strong>correct</strong>, and then put that condition after
+the word <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
+</div>
+</div>
+<div class="section" id="more-on-assert-and-preconditions">
+<h2><span class="section-number">20.2.3. </span>More on <code class="docutils literal notranslate"><span class="pre">assert</span></code> and Preconditions<a class="headerlink" href="#more-on-assert-and-preconditions" title="Permalink to this headline">¶</a></h2>
+<p>Let’s discuss for a moment the question of what a defensive function should do when it receives invalid values in its
+parameters. By using an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement to check preconditions, we’ve designed the function to terminate the
+program if it is given bad data. Is this the right thing to do? If the program ends abruptly due to an assertion
+failure, the user will lose whatever work is in progress. That seems undesirable, to put it mildly.</p>
+<p>Although a full discussion of defensive programming and assertions is outside the scope of an introductory programming
+textbook, think about this: an assertion error <strong>indicates a bug in the program</strong>. More specifically, the bug is a
+logic error that resulted in calling a function with inappropriate parameter values. If a computation is in progress and
+a logic error occurs, any results that computation might produce will be faulty. Logic errors often go silently
+undetected by users, because they aren’t aware that the output is incorrect. It is better for a user to lose work
+than for a logic error to go undetected and produce an invalid result that might be unwittingly used. Therefore,
+using assert statements to check function preconditions is entirely appropriate.</p>
+<p>Not only will adding assertions to your functions to check preconditions help expose logic errors in your program, it
+does so in a way that helps you track them down and fix them quickly. When you don’t use assertions, a function that is
+called with incorrect parameters may produce erroneous results that aren’t detected until much later in the program, and
+debugging the problem can be difficult to trace back to the source. When you use assertions to check preconditions, a
+function that detects a problem will stop immediately, helping you pinpoint the problem much faster. This behavior is
+called the <strong>fail fast principle</strong>. You want your program to fail as quickly after a logic error is detected as possible
+to help streamline the diagnostic work.</p>
+<div class="admonition-debugging-assertion-failures admonition">
+<p class="admonition-title">Debugging Assertion Failures</p>
+<p>When an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement that you have written to check a function precondition signals an error at runtime, your first
+thought will probably be: “what went wrong? where’s the problem?” It will help if you remember that an assert that
+checks a function precondition is there to <strong>catch bugs in code that calls the function</strong>. After all, you put it on the
+first line of the function. So, it’s not an indication of a problem in the function: instead, the calling code has a
+problem. So, look to see what code called the function. When you’re running your program in a regular Python interpreter,
+the full error message will show the exact sequence of calls that triggered the error, and you can tell exactly
+which line of code is responsible for providing the incorrect values.</p>
+</div>
+<div class="admonition-functions-that-cannot-fail admonition">
+<p class="admonition-title">Functions that Cannot Fail</p>
+<p>An alternative approach to handling bad input for sumnums would be to design the function so that it works correctly
+regardless of whether the low end of the range is specified first or second. For example, we could design it so that
+both of the following calls produce correct results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sumnums</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sumnums</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>It’s not hard to do; I bet you could figure out how to tweak the function to work correctly for both of these
+calls without much effort. However, a more important question is: should we do that?</p>
+<p>This question doesn’t necessarily have a simple answer, but briefly, there are a couple of considerations that argue
+against it. First, refining the function to work correctly for both of these calls will result in a function that is
+slightly more complex, and therefore, perhaps more likely to contain bugs. Also, testing will be more involved;
+there are more cases to consider.</p>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="20.2.3.1" data-multipleanswers="false"  id="mc_assert_1"  style="visibility: hidden;">
+            <p>checkassump-1-5: An <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement displays output if the condition is True.</p>
+
+            <li data-component="answer"  id="mc_assert_1_opt_a">True</li><li data-component="feedback">Incorrect. Output is displayed only if the condition is False.</li>
+            
+            <li data-component="answer" data-correct id="mc_assert_1_opt_b">False</li><li data-component="feedback">Correct. Output is displayed only if the condition is False.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="20.2.3.2" data-multipleanswers="false"  id="mc_assert_2"  style="visibility: hidden;">
+            <p>checkassump-1-6: Consider the following function. Which assert should be added to check its
+precondition?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getfirst</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns first character of msg</span>
+
+<span class="sd">    Precondition: len(msg) &gt; 0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="mc_assert_2_opt_a">assert len(msg) <= 0</li><li data-component="feedback">Incorrect. Use the precondition as the condition for the assert.</li>
+            
+            <li data-component="answer" data-correct id="mc_assert_2_opt_b">assert len(msg) > 0</li><li data-component="feedback">Correct. Use the precondition as the condition for the assert.</li>
+            
+            <li data-component="answer"  id="mc_assert_2_opt_c">assert msg[0]</li><li data-component="feedback">Incorrect. Use the precondition as the condition for the assert.</li>
+            
+            <li data-component="answer"  id="mc_assert_2_opt_d">none of these</li><li data-component="feedback">Incorrect. Use the precondition as the condition for the assert.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 20.1. Introduction: Unit Testing' data-toggle="tooltip">
+    <a href="intro-UnitTesting.html" aria-label="20.1. Introduction: Unit Testing">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 20.3. Testing Functions' data-toggle="tooltip" >
+    <a href="TestingFunctions.html" aria-label="20.3. Testing Functions">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum, Created using Runestone Interactive.
+      Last updated on Nov 13, 2021.<br/>
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.5.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {{ if request.application == 'runestone':}}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ =settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {{ pass }}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+
+  
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

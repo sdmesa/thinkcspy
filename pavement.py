@@ -24,26 +24,22 @@ project_name = "thinkcspy"
 ###############################
 
 master_url = None
-doctrees = './build/{}/doctrees'.format(project_name)
 dynamic_pages = True
 
-if master_url is None:
-    master_url = get_master_url()
-
+master_url = 'https://sdmesa.github.io/thinkcspy/'
 master_app = 'runestone'
-serving_dir = "./build/" + project_name
+serving_dir = "./docs"
 dest = "./published"
 
 options(
     sphinx = Bunch(docroot=".",),
 
     build = Bunch(
-        builddir="./build/"+project_name,
+        builddir=serving_dir,
         sourcedir="./_sources/",
-        outdir="./build/"+project_name,
+        outdir=serving_dir,
         confdir=".",
         project_name = project_name,
-        doctrees = doctrees,
         template_args = {
             'course_id':project_name,
             'course_title': 'How\\ to\\ Think\\ like\\ a\\ Computer\\ Scientist',
@@ -54,7 +50,7 @@ options(
             'use_services': 'true',
             'python3': 'true',
             'dynamic_pages': dynamic_pages,
-            'dburl': 'postgresql://bmiller@localhost/runestone',
+            'dburl': '',
             'basecourse': 'thinkcspy',
             'downloads_enabled': 'false',
             'default_ac_lang': 'python',
