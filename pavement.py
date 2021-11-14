@@ -23,8 +23,7 @@ except ImportError:
 project_name = "thinkcspy"
 ###############################
 
-master_url = None
-dynamic_pages = True
+dynamic_pages = False
 
 master_url = 'https://sdmesa.github.io/thinkcspy/'
 master_app = 'sdmesa'
@@ -41,24 +40,23 @@ options(
         confdir=".",
         project_name = project_name,
         template_args = {
+            'appname':master_app,
             'course_id':project_name,
             'course_name':project_name,
             'course_title': 'How\\ to\\ Think\\ like\\ a\\ Computer\\ Scientist',
-            'login_required':'false',
-            'appname':master_app,
-            'loglevel':10,
             'course_url':master_url,
-            'use_services': 'true',
-            'python3': 'true',
             'dynamic_pages': dynamic_pages,
+            'login_required':'false',
+            'loglevel':10,
+            'use_services': 'false',
+            'python3': 'true',
             'dburl': '',
             'basecourse': 'thinkcspy',
             'downloads_enabled': 'false',
             'default_ac_lang': 'python',
             'enable_chatcodes': 'false',
-            'allow_pairs': 'false',
-            'response.serve_ad': 'false',
-            'settings.show_rs_banner': 'false'
+            'minimal_outside_links': 'true',
+            'allow_pairs': 'false'
         }
 
     )

@@ -1,8 +1,15 @@
 ChangeLog
 =========
 
+November 13 2021
+----------------
+Release v4.0.2
+
+Forked from https://github.com/RunestoneInteractive/thinkcspy
+
 August 19 2016
 --------------
+Release v3.7.0
 
 * **Numbered Sections** -- By default when you create a new course
 based on this book you will get numbered sections.  If you are rebuilding
@@ -12,6 +19,7 @@ need to manually update your index.rst file.
 
 August 9, 2016
 --------------
+Release v3.6.0
 
 * Update all end of chapter exercises with new quesiton directive in preparation
 for the new and improved course builder.
