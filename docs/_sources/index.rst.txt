@@ -14,7 +14,7 @@ Table of Contents
 .. toctree::
    :numbered:
    :caption: How to Think Like a Computer Scientist
-   :maxdepth: 2
+   :maxdepth: 1
 
    GeneralIntro/toctree.rst
    SimplePythonData/toctree.rst
