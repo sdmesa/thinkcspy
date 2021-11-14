@@ -8,12 +8,9 @@
 
 .. _t_o_c:
 
-Table of Contents
-:::::::::::::::::
-
 .. toctree::
    :numbered:
-   :caption: How to Think Like a Computer Scientist
+   :caption: How to Think Like a Computer Scientist: SD Mesa College Edition
    :maxdepth: 1
 
    GeneralIntro/toctree.rst
@@ -37,9 +34,6 @@ Table of Contents
    Inheritance/toctree.rst
    UnitTesting/toctree.rst
 
-Labs
-::::
-
 .. toctree::
    :caption: Labs
    :maxdepth: 1
@@ -55,9 +49,6 @@ Labs
    Labs/sequencelab.rst
    Labs/sinlab.rst
 
-Appendices
-::::::::::
-
 .. toctree::
    :caption: Appendices
    :maxdepth: 1
@@ -66,9 +57,6 @@ Appendices
    Appendices/usingIDE.rst
    Appendices/PrecedenceTable.rst
    Appendices/testmodule.rst
-
-Acknowledgements
-::::::::::::::::
 
 .. toctree::
     :caption: Acknowledgements
@@ -82,8 +70,7 @@ Acknowledgements
     FrontBackMatter/contrib.rst
     FrontBackMatter/fdl-1.3.rst
 
-Index and Search
-::::::::::::::::::
+**Index and Search**
 
 * :ref:`genindex`
 * :ref:`search`
