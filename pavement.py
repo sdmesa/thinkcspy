@@ -27,7 +27,7 @@ master_url = None
 dynamic_pages = True
 
 master_url = 'https://sdmesa.github.io/thinkcspy/'
-master_app = 'runestone'
+master_app = 'sdmesa'
 serving_dir = "./docs"
 dest = "./published"
 
@@ -42,6 +42,7 @@ options(
         project_name = project_name,
         template_args = {
             'course_id':project_name,
+            'course_name':project_name,
             'course_title': 'How\\ to\\ Think\\ like\\ a\\ Computer\\ Scientist',
             'login_required':'false',
             'appname':master_app,
@@ -55,7 +56,9 @@ options(
             'downloads_enabled': 'false',
             'default_ac_lang': 'python',
             'enable_chatcodes': 'false',
-            'allow_pairs': 'false'
+            'allow_pairs': 'false',
+            'response.serve_ad': 'false',
+            'settings.show_rs_banner': 'false'
         }
 
     )
