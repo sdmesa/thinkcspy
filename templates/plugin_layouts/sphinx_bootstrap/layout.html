@@ -34,9 +34,9 @@
 
       <div>
         {% if minimal_outside_links != 'True' %}
-          <a class="brand-logo" style='background: transparent url("{{pathto('_static/img/logo_small.png', 1)}}") no-repeat 0px 0px;' href="/{{appname}}/default/user/login">&nbsp; </a>
+          <a class="brand-logo" style='background: transparent url("{{pathto('_static/img/logo_small.png', 1)}}") no-repeat 0px 0px;' href="https://www.sdmesa.edu">&nbsp; </a>
         {% else %}
-          <a class="brand-logo" style='background: transparent url("{{pathto('_static/img/logo_small.png', 1)}}") no-repeat 0px 0px;'>&nbsp;<span aria-label="logo" class="visuallyhidden">Runestone Logo</span> </a>
+          <a class="brand-logo" style='background: transparent url("{{pathto('_static/img/logo_small.png', 1)}}") no-repeat 0px 0px;'>&nbsp;<span aria-label="logo" class="visuallyhidden">Mesa Logo</span> </a>
         {% endif %}
         <a class="navbar-brand" href="{{ pathto(master_doc) }}" aria-label="index-page">
           {% if dynamic_pages == 'True' %}
