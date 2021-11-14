@@ -58,7 +58,7 @@ the end of the file.
 
 ::
 
-    >>> infile = open("ccdata.txt", "r")
+    >>> infile = open("ccdata2.txt", "r")
     >>> aline = infile.readline()
     >>> aline
     '1850\-0.37\2.24E-7\n'
@@ -115,7 +115,7 @@ Now let's look at another method of reading our file using a ``while`` loop.  Th
 .. activecode:: files_while
     :nocodelens:
 
-    infile = open("ccdata.txt", "r")
+    infile = open("ccdata2.txt", "r")
     line = infile.readline()
     while line:
         values = line.split()

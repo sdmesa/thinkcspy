@@ -314,7 +314,7 @@ the character immediately following the last character returned. In the case
 of <code class="docutils literal notranslate"><span class="pre">readline</span></code> this moves the marker to the first character of the next line
 in the file. In the case of <code class="docutils literal notranslate"><span class="pre">read</span></code> or <code class="docutils literal notranslate"><span class="pre">readlines</span></code> the marker is moved to
 the end of the file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ccdata.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ccdata2.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">aline</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">aline</span>
 <span class="go">&#39;1850\-0.37\2.24E-7\n&#39;</span>
@@ -399,7 +399,7 @@ returned.</p></td>
     data-audio=''      
            data-wasm=/_static
     style="visibility: hidden;">
-infile = open("ccdata.txt", "r")
+infile = open("ccdata2.txt", "r")
 line = infile.readline()
 while line:
     values = line.split()
