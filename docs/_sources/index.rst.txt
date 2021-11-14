@@ -8,6 +8,9 @@
 
 .. _t_o_c:
 
+Contents
+::::::::
+
 .. toctree::
    :numbered:
    :caption: How to Think Like a Computer Scientist: SD Mesa College Edition
